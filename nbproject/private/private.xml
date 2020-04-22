@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDao.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/item.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/confirmAdminLogout.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/warningCategory.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/ManageItem.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/index.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/includes/headerNormal.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/Item.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/includes/Navbar.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/ManageCategory.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDaoImplement.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/includes/cart.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/confirmLogout.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDao.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/login.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/warningItem.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/removeFromCart.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDaoImplement.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/addItemToCart.java</file>
+        </group>
+    </open-files>
+</project-private>
