@@ -116,7 +116,7 @@
                                                          <i class="material-icons">edit
                                                          </i>
                                                      </a>
-                                                     <a href="warningCategory.jsp">
+                                                     <a href="warningCategory.jsp?catName=<%=rs.getString("Cname") %>">
                                                          <i class="material-icons">delete</i>
                                                      </a></td>
                                              </tr>    

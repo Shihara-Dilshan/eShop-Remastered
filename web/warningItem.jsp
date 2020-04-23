@@ -43,7 +43,7 @@
    <!--UNREGISTERED USER'S HEADER-->
         <%@ include file="includes\adminheaderNormal.jsp"  %>  
            
-      <form action="#">  
+      
       <div class="container" id="myForm">
       
  <div class="card-panel z-depth-3 ">
@@ -82,20 +82,18 @@
         
         </div>
           <div class="col s6">
-              <a href="logout">
+              <a href="DeleteItem?itemname=<%=request.getParameter("IName") %>">
                   <input type="submit" value="Log out" class="btn red" style="width:100%;" onclick="removeValues()">
               </a>
         </div>
           
       
       </div>
-    </form>
+    
   </div>
   </div>
       
-      </div>
-      </form>
-
+     
 
 
    

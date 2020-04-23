@@ -13,6 +13,8 @@ public class ItemDaoImplement implements ItemDao {
     private final String sqlAddItem = "insert into item( id , name,descr,price , catName , filename , filepath , qty  ) values(1,?,?,?,?,?,?,?)";
     private final String sqlCatUpdate = "update category set Cname=? , CDescription=? , CfileName=? where Cname=? ";
     private final String sqlItemUpdate = "update item set name=? , descr=? , price=? , catName=? , qty=? , filename=?  where name=? ";
+    private final String sqlCatDelete = "delete from category where Cname=?";
+    private final String sqlItemDelete = "delete from item where name=?";
     
     @Override
     public boolean AddCategory(){
@@ -40,6 +42,20 @@ public class ItemDaoImplement implements ItemDao {
     
         return false;
     
+    }
+    
+    @Override
+    public boolean DeleteItem(){
+        
+        return false;
+        
+    }
+    
+    @Override
+    public boolean DeleteCategory(){
+        
+        return false;
+        
     }
     
     //overloading the real AddCategory function
@@ -196,5 +212,75 @@ public class ItemDaoImplement implements ItemDao {
     
         
     }
+    
+     
+    //overloading the real AddCategory function
+    public boolean DeleteCategory(String Cname){
+    
+        
+            try{
+            DataSource DeleteCategorysource = new DataSource();
+            Connection con = DeleteCategorysource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlCatDelete);
+           
+            st.setString(1, Cname);
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    }
+    
+    
+    //overloading the real AddCategory function
+    public boolean DeleteItem(String Cname){
+    
+        
+            try{
+            DataSource DeleteItemsource = new DataSource();
+            Connection con = DeleteItemsource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlItemDelete);
+           
+            st.setString(1, Cname);
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    }
+    
+     
     
 }

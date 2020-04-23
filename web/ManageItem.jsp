@@ -116,7 +116,7 @@
                                                      <a href="UpdateItem.jsp?name=<%=rs.getString("name") %>&desc=<%=rs.getString("descr") %>&price=<%=rs.getString("price") %>&image=<%=rs.getString("filename") %>&qty=<%=rs.getString("qty") %>&catName=<%=rs.getString("catName") %>">
                                                          <i class="material-icons">edit</i>
                                                      </a>
-                                                     <a href="warningItem.jsp">
+                                                     <a href="warningItem.jsp?IName=<%=rs.getString("name") %>">
                                                          <i class="material-icons">delete</i>
                                                      </a>
                                                  </td>

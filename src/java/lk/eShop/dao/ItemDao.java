@@ -7,5 +7,7 @@ public interface ItemDao {
     public boolean Additem();
     public boolean UpdateCategory();
     public boolean UpdateItem();
+    public boolean DeleteItem();
+    public boolean DeleteCategory();
     
 }
