@@ -5,9 +5,11 @@
         <group>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDao.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/item.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/AddCat.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/confirmAdminLogout.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/warningCategory.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/ManageItem.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/login.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/index.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/includes/headerNormal.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/Item.java</file>
@@ -22,6 +24,7 @@
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/removeFromCart.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDaoImplement.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/addItemToCart.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/includes/headerlogin.jsp</file>
         </group>
     </open-files>
 </project-private>

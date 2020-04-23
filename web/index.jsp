@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      
+<!-- Added Comment 8************************************************************* -->      
 <!--My CSS -->
 <link href="css/eShop.css" rel="stylesheet"> 
 <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> 
@@ -70,11 +70,11 @@
             <div class="col s12">
                 <h4>Search Here</h4>
                 <div class="input-field">
-                    <form action="item.jsp?" method="get">
+                    <form action="item.jsp" method="get">
 
-                        <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Rooms , Other products, ect...">
-                        <input type="text" class="hide" value="true" name="search">
-                        <input type="submit" class="hide" value="showAll" name="show">
+                        <input name="show" type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="Rooms , Other products, ect...">
+                        
+                       
         
                     </form>
 
@@ -376,17 +376,16 @@
     $(document).ready(function(){
     $('input.autocomplete').autocomplete({
           data: {
-                 "Nike": null,
-                 "Asus": null,
-                 "Laptop": null,
+                 "Shoes": null,
                  "Laptops": null,
+                 "Mobile Phones": null,
+                 "Desktops": null,
                  "Adiddas": null,
                  "Toys": null,
-                 "Shoes": null,
-                 "PC": null,
-                 "iphone": null,
+                 "Ebooks": null,
+                 "Sports Items": null,
+                 "iphone": "Mobile Phones",
                  "Paintings": null,
-                 "Mobile Phones": null,
                  "Samsung": null,
                  "Apple": null,
                  "LG": null,
