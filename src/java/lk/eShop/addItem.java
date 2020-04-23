@@ -24,7 +24,7 @@ public class addItem extends HttpServlet {
     private String IcatName;
     private String qty;
     private String fileName;
-    private String savePath;
+    
 
     public void setIname(String Iname) {
         this.Iname = Iname;
@@ -64,10 +64,9 @@ public class addItem extends HttpServlet {
         
         fileName = getFileName(part);
        
-        savePath = "home\\noobmaster\\NetBeansProjects\\WebApplication3\\web\\image\\"+ fileName ;
+       
         
-        
-        if(sdao.Additem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , savePath )){
+        if(sdao.Additem(Iname, IPrice , IDesc ,IcatName , qty ,fileName )){
             
             //HttpSession session = request.getSession();
             //session.setAttribute("additem", "yes");

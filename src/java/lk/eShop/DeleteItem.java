@@ -41,7 +41,7 @@ public class DeleteItem extends HttpServlet {
             
         }
         else{
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("errorPage.jsp");
         }
          
         

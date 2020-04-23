@@ -19,7 +19,15 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+      <style>
+    
+        body {
+        
+            background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+        }
+
+    </style>  
     </head>
     
 

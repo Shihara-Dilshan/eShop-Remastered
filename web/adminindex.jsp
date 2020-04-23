@@ -5,6 +5,10 @@
 --%>
 
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="lk.eShop.dao.DataSource"%>
 <%
     if (session.getAttribute("adminemail") == null) {
 
@@ -40,7 +44,31 @@
     <body id="Home" class="scrollspy test" background="image/gray-and-black-hive-printed-textile-691710.jpg">
         <!--UNREGISTERED USER'S HEADER-->
 
+        <%
+               
+                
+                DataSource source = new DataSource();
+                Connection con = source.createConnection();
+                PreparedStatement cateountSt = con.prepareStatement("select * from category");
+                PreparedStatement ItemCountSt = con.prepareStatement("select * from item");
+                
+                ResultSet rs =cateountSt.executeQuery();
+                ResultSet rs2 =ItemCountSt.executeQuery();
+                
+                int CatCount = 0;
+                int ItemCount = 0;
+                
+                while(rs.next()){
+                
+                    CatCount++;
+                }
+                while(rs2.next()){
+                
+                    ItemCount++;
+                }
+                  
 
+        %>
 
 
 
@@ -62,7 +90,7 @@
 
                             <div class="card-content teal-text"> 
 
-                                <h4>6</h4>
+                                <h4><%= CatCount %></h4>
                                 <a href="ManageCategory.jsp"><button class="btn"> View / Manage  </button></a>
                             </div>
 
@@ -80,7 +108,7 @@
                             <p> We delivery to your door step </p>
                             <div class="card-content teal-text"> 
 
-                                <h4>25</h4>
+                                <h4><%= ItemCount %></h4>
                                 <a href="ManageItem.jsp"><button class="btn"> View / Manage  </button></a>
                             </div>
                         </div>

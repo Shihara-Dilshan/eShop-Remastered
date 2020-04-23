@@ -19,9 +19,17 @@
             
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+<style>
+    
+        body {
+        
+            background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+        }
+
+</style>     
 </head>
-<body id="Home" class="scrollspy test">
+<body id="Home" class="scrollspy test" >
   
 <%@ include file="includes/Navbar.jsp"  %>  
 <%@ include file="includes/cart.jsp"  %>  
@@ -29,28 +37,28 @@
 <div class="slider" style="z-index: -1">
     <ul class="slides">
         <li>
-            <img src="image/fashion-fashionable-footwear-leather-267301.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/close-up-photography-of-red-and-black-nike-running-shoe-786003.jpg"> <!-- random image -->
             <div class="caption center-align">
                 <h3>Fashion With a leap</h3>
                 <h5 class="light grey-text text-lighten-3"> Up to 50% Discounts on your cloths</h5>
             </div>
         </li>
         <li>
-            <img src="image/assorted-color-smartphone-cases-374117.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/assorted-color-smartphone-cases-374117.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>24/7 Service available</h3>
                 <h5 class="light grey-text text-lighten-3">Shop anytime anywhere</h5>
             </div>
         </li>
         <li>
-            <img src="image/person-holding-book-from-shelf-1370298.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/person-holding-book-from-shelf-1370298.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>All about your choice</h3>
                 <h5 class="light grey-text text-lighten-3">100000+ items. 300+ manufactures </h5>
             </div>
         </li>
         <li>
-            <img src="image/pair-of-laced-up-black-low-top-sneakers-847371.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/pair-of-laced-up-black-low-top-sneakers-847371.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>Fast delivery</h3>
                 <h5 class="light grey-text text-lighten-3">Shop.lk provides fast and secure delivery service</h5>
@@ -111,7 +119,7 @@
                     <div class="card">
                         <div class="card-image">
                             
-                            <img src="image/<%=rs.getString("CfileName") %>">
+                            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=rs.getString("CfileName") %>">
                             <span class="card-title"><%=rs.getString("Cname") %></span>
                         </div>
                         <div class="card-content">
@@ -238,53 +246,53 @@
             </div>
             <div class="col s12 m3">
 
-                <img src="image/photo-of-imac-near-macbook-1029757.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/photo-of-imac-near-macbook-1029757.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
             <div class="col s12 m3">
 
-                <img src="image/macbook-pro-turned-off-205421.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/macbook-pro-turned-off-205421.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
             <div class="col s12 m3">
 
-                <img src="image/photo-of-nike-shoes-1598505.jpg" alt="" class="materialboxed responsive-img" width="650" >
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col s12 m3">
-
-                <img src="image/samsung-samsung-galaxy-s6-edge-plus-edge-plus-s6-edge-47261.jpg" alt="" class="materialboxed responsive-img" width="650" >
-            </div>
-            <div class="col s12 m3">
-
-                <img src="image/black-dslr-camera-mounted-on-black-tripod-212372.jpg" alt="" class="materialboxed responsive-img" width="650" >
-            </div>
-            <div class="col s12 m3">
-
-                <img src="image/apple-technology-ipad-computer-38568.jpg" alt="" class="materialboxed responsive-img" width="650" >
-            </div>
-            <div class="col s12 m3">
-
-                <img src="image/ball-court-design-game-209977.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/photo-of-nike-shoes-1598505.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
 
         </div>
         <div class="row">
             <div class="col s12 m3">
 
-                <img src="image/tomica-cars-collections-163696.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/samsung-samsung-galaxy-s6-edge-plus-edge-plus-s6-edge-47261.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
             <div class="col s12 m3">
 
-                <img src="image/mobile-phone-samsung-edge-samsung-galaxy-s6-edge-plus-50614.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/black-dslr-camera-mounted-on-black-tripod-212372.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
             <div class="col s12 m3">
 
-                <img src="image/silver-iphone-x-with-airpods-788946.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/apple-technology-ipad-computer-38568.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
             <div class="col s12 m3">
 
-                <img src="image/chanel-paris-eua-de-parfum-bottle-755992.jpg" alt="" class="materialboxed responsive-img" width="650" >
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/ball-court-design-game-209977.jpg" alt="" class="materialboxed responsive-img" width="650" >
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s12 m3">
+
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/tomica-cars-collections-163696.jpg" alt="" class="materialboxed responsive-img" width="650" >
+            </div>
+            <div class="col s12 m3">
+
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/mobile-phone-samsung-edge-samsung-galaxy-s6-edge-plus-50614.jpg" alt="" class="materialboxed responsive-img" width="650" >
+            </div>
+            <div class="col s12 m3">
+
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/silver-iphone-x-with-airpods-788946.jpg" alt="" class="materialboxed responsive-img" width="650" >
+            </div>
+            <div class="col s12 m3">
+
+                <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/chanel-paris-eua-de-parfum-bottle-755992.jpg" alt="" class="materialboxed responsive-img" width="650" >
             </div>
 
         </div>

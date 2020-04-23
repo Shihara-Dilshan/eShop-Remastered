@@ -9,8 +9,8 @@ import javax.servlet.http.Part;
 
 public class ItemDaoImplement implements ItemDao {
     
-    private final String sqlCatInsert = "insert into category( id , Cname,CDescription,CfileName , CfilePath ) values(1,?,?,?,?)";
-    private final String sqlAddItem = "insert into item( id , name,descr,price , catName , filename , filepath , qty  ) values(1,?,?,?,?,?,?,?)";
+    private final String sqlCatInsert = "insert into category( id , Cname,CDescription,CfileName ) values(1,?,?,?)";
+    private final String sqlAddItem = "insert into item( id , name,descr,price , catName , filename , qty  ) values(1,?,?,?,?,?,?)";
     private final String sqlCatUpdate = "update category set Cname=? , CDescription=? , CfileName=? where Cname=? ";
     private final String sqlItemUpdate = "update item set name=? , descr=? , price=? , catName=? , qty=? , filename=?  where name=? ";
     private final String sqlCatDelete = "delete from category where Cname=?";
@@ -59,7 +59,7 @@ public class ItemDaoImplement implements ItemDao {
     }
     
     //overloading the real AddCategory function
-    public boolean AddCategory(String Cname , String Cdesc , String fileName , String FilePath ){
+    public boolean AddCategory(String Cname , String Cdesc , String fileName ){
     
         
         
@@ -71,7 +71,7 @@ public class ItemDaoImplement implements ItemDao {
             st.setString(1, Cname);
             st.setString(2, Cdesc);
             st.setString(3, fileName);
-            st.setString(4, FilePath);
+            
             
             int i = st.executeUpdate();
             
@@ -96,7 +96,7 @@ public class ItemDaoImplement implements ItemDao {
     }
     
     //overloading the real Additem function
-    public boolean Additem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName ,String savePath ){
+    public boolean Additem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName ){
     
         
         
@@ -110,8 +110,7 @@ public class ItemDaoImplement implements ItemDao {
             st.setString(3, IPrice);
             st.setString(4, IcatName);
             st.setString(5, fileName);
-            st.setString(6, savePath);
-            st.setString(7, qty);
+            st.setString(6, qty);
             
             
             int i = st.executeUpdate();

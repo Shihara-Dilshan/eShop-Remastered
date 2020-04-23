@@ -111,7 +111,7 @@
                                                  <td class="left"><%=rs.getString("name") %></td>
                                                  <td class="price"><%=rs.getString("descr") %></td>
                                                  <td class="price"><%=rs.getString("price") %></td>
-                                                 <td ><img style="width:50px; height: 50px; border-radius: 50%;" src="image/<%=rs.getString("filename") %>"></td>
+                                                 <td ><img style="width:50px; height: 50px; border-radius: 50%;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=rs.getString("filename") %>"></td>
                                                  <td> 
                                                      <a href="UpdateItem.jsp?name=<%=rs.getString("name") %>&desc=<%=rs.getString("descr") %>&price=<%=rs.getString("price") %>&image=<%=rs.getString("filename") %>&qty=<%=rs.getString("qty") %>&catName=<%=rs.getString("catName") %>">
                                                          <i class="material-icons">edit</i>

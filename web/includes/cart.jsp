@@ -33,6 +33,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<style>
+    
+        body {
+        
+            background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+        }
+
+</style>  
 <section id="cartSection">
     <div id="cart" class="hideCart test">
         <div>

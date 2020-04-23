@@ -110,7 +110,7 @@
                                              <tr>
                                                  <td class="left"><%=rs.getString("Cname") %></td>
                                                  <td class="price"><%=rs.getString("CDescription") %></td>
-                                                 <td ><img style="width:60px; height: 60px; border-radius: 50%;" src="image/<%=rs.getString("CfileName") %>"></td>
+                                                 <td ><img style="width:60px; height: 60px; border-radius: 50%;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=rs.getString("CfileName") %>"></td>
                                                  <td> 
                                                      <a href="UpdateCategory.jsp?catName=<%=rs.getString("Cname") %>&Des=<%=rs.getString("CDescription") %>&image=<%=rs.getString("CfileName") %>" >
                                                          <i class="material-icons">edit

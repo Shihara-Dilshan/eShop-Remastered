@@ -121,7 +121,7 @@
                             <input type="file" name="Iimage"  ><br><br>
                                 <label for="bimage">Current image name is <%=request.getParameter("image") %></label>
                                 <br><br>
-                                <img style="width:100%; height: auto;" src="image/<%=request.getParameter("image") %>">
+                                <img style="width:100%; height: auto;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=request.getParameter("image") %>">
                                     
 
                         </div>

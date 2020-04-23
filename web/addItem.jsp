@@ -4,7 +4,11 @@
     Author     : noobmaster
 --%>
      
-    <%
+    <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="lk.eShop.dao.DataSource"%>
+<%
         if(session.getAttribute("adminemail") == null){
         
             response.sendRedirect("adminlogin.jsp");
@@ -86,12 +90,40 @@
           <label for="itemDesc">Description</label>
         </div>
       </div>
-      <div class="row">
+      <!--div class="row">
           <div class="input-field col s12">
           <input id="names" type="text" name="Icategory">
           <label for="Icategory">Category</label>
         </div>
-      </div>
+      </div-->
+      <div class="row">
+          <div class="input-field col s12">
+              <select style="font-size: 10px;" name="Icategory">
+                  <option value="" disabled selected>Choose Category</option>
+                  <%
+               
+                
+                         DataSource source = new DataSource();
+                         Connection con = source.createConnection();
+                         PreparedStatement st = con.prepareStatement("select Cname from category");
+    
+                         ResultSet rs =st.executeQuery();
+                         int x = 1;
+                
+                         while(rs.next()){
+                
+                  
+
+                %>
+                  <option value="<%=rs.getString("Cname") %>"><%=rs.getString("Cname") %></option>
+                <% 
+                
+                    }
+                %>
+              </select>
+              
+          </div>
+      </div>       
       <div class="row">
           <div class="input-field col s12">
           <input id="names" type="text" name="qty">
@@ -140,6 +172,9 @@
 
           $(document).ready(function(){
           $('.materialboxed').materialbox();
+          });
+          $(document).ready(function () {
+                $('select').formSelect();
           });
          
           

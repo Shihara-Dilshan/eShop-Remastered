@@ -52,10 +52,9 @@ public class addCategory extends HttpServlet {
         
         fileName = getFileName(part);
        
-        savePath = "home\\noobmaster\\NetBeansProjects\\WebApplication3\\web\\image\\"+ fileName ;
+       
         
-        
-        if(sdao.AddCategory(Cname, CDescription , fileName , savePath )){
+        if(sdao.AddCategory(Cname, CDescription , fileName )){
             
             //HttpSession session = request.getSession();
             //session.setAttribute("additem", "yes");

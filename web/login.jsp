@@ -18,7 +18,15 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+      <style>
+    
+        body {
+        
+            background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+        }
+
+    </style>  
     </head>
     
 
@@ -39,7 +47,7 @@
   <form action="login" method="post">  
       <div class="container" id="myForm">
       
-          <div class="card-panel z-depth-3">
+          <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
   <div class="row">
         <div class="col s12">
             <div class="card-title center-align teal-text">

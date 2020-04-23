@@ -19,21 +19,21 @@ public class Item {
     
     public void setId() {
         this.id = idCount;
-        idCount++;
+        this.idCount++;
     }
     
     
     public String getItemName() {
-        return ItemName;
+        return this.ItemName;
     }
 
     public String getItemPrice() {
-        return ItemPrice;
+        return this.ItemPrice;
     }
     
     
     public int getId() {
-        return id;
+        return this.id;
     }
 
     

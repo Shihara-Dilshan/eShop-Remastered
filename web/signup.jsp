@@ -22,8 +22,17 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+        <style>
+    
+            body {
+        
+                background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+            }
 
+        </style>  
+    </head>
+    
 
 
     <body id="Home" class="scrollspy test">
@@ -48,7 +57,7 @@
         <form method="post" action="signup">
             <div class="container">
 
-                <div class="card-panel z-depth-3 ">
+                <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
                     <div class="row">
                         <div class="col s12">
                             <div class="card-title center teal-text">
