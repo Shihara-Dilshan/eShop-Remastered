@@ -137,7 +137,7 @@ public class ItemDaoImplement implements ItemDao {
     
     
     //overloading the real AddCategory function
-    public boolean UpdateCategory(String Cname , String Cdesc , String fileName , String FilePath , String Oldbname ){
+    public boolean UpdateCategory(String Cname , String Cdesc , String fileName , String Oldbname ){
     
         
             try{
@@ -174,7 +174,7 @@ public class ItemDaoImplement implements ItemDao {
     
      
     //overloading the real UpdateItem function
-    public boolean UpdateItem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName ,String savePath , String Oldbname){
+    public boolean UpdateItem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName , String Oldbname){
     
         
             try{

@@ -27,7 +27,29 @@
             
         }
 
-</style>     
+</style>   
+ <script>
+            
+            var resulSignUp = "Registed";
+           
+            
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+                if(resulSignUp === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfully registerd!" });
+          
+                }
+   
+                
+            });
+             
+           
+ </script>
+
+
+
+
 </head>
 <body id="Home" class="scrollspy test" >
   

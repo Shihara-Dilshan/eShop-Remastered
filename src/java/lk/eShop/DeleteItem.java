@@ -31,12 +31,8 @@ public class DeleteItem extends HttpServlet {
        
         
         if(sdaoDeleteItem.DeleteItem(Iname)){
-            
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
-            
-            
-            response.sendRedirect("adminindex.jsp");
+             
+            response.sendRedirect("adminindex.jsp?result=ItemDelected");
             
             
         }

@@ -51,7 +51,7 @@ public class addItem extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
          
-        ItemDaoImplement sdao = new ItemDaoImplement();
+        ItemDaoImplement addItemdao = new ItemDaoImplement();
          
         
         
@@ -66,13 +66,10 @@ public class addItem extends HttpServlet {
        
        
         
-        if(sdao.Additem(Iname, IPrice , IDesc ,IcatName , qty ,fileName )){
-            
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
+        if(addItemdao.Additem(Iname, IPrice , IDesc ,IcatName , qty ,fileName )){
             
             
-            response.sendRedirect("adminindex.jsp");
+            response.sendRedirect("adminindex.jsp?result=addedItem");
             
             
         }

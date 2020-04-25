@@ -4,7 +4,7 @@
     Author     : noobmaster
 --%>
      
-    <%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="lk.eShop.dao.DataSource"%>

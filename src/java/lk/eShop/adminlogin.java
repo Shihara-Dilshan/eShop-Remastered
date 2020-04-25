@@ -53,7 +53,7 @@ public class adminlogin extends HttpServlet {
                 
             }else
             {
-                response.sendRedirect("adminlogin.jsp");
+                response.sendRedirect("adminlogin.jsp?result=failed");
                 
             }
         

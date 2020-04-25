@@ -42,7 +42,7 @@ public class addCategory extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         
-        ItemDaoImplement sdao = new ItemDaoImplement();
+        ItemDaoImplement addCat = new ItemDaoImplement();
          
         
         
@@ -54,13 +54,10 @@ public class addCategory extends HttpServlet {
        
        
         
-        if(sdao.AddCategory(Cname, CDescription , fileName )){
+        if(addCat.AddCategory(Cname, CDescription , fileName )){
             
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
-            
-            
-            response.sendRedirect("adminindex.jsp");
+           
+            response.sendRedirect("adminindex.jsp?result=addedCat");
             
             
         }

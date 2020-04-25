@@ -43,7 +43,7 @@ public class UpdateCategory extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         
-        ItemDaoImplement sdaoUpdate = new ItemDaoImplement();
+        ItemDaoImplement sdaoUpdateCat = new ItemDaoImplement();
          
         
         
@@ -54,21 +54,16 @@ public class UpdateCategory extends HttpServlet {
         
         fileName = getFileName(part);
        
-        savePath = "home\\noobmaster\\NetBeansProjects\\WebApplication3\\web\\image\\"+ fileName ;
-        
-        
-        if(sdaoUpdate.UpdateCategory(Cname, CDescription , fileName , savePath , Oldbname )){
-            
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
+       
+        if(sdaoUpdateCat.UpdateCategory(Cname, CDescription , fileName , Oldbname )){
             
             
-            response.sendRedirect("adminindex.jsp");
+            response.sendRedirect("ManageCategory.jsp?result=updated");
             
             
         }
         else{
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("errorPage.jsp");
         }
          
         

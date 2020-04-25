@@ -20,8 +20,8 @@
        
         <li><a href="index.jsp?show=showAll">Home</a></li>
         <li><a href="#search">Search</a></li>
-        <li><a href="item.jsp?show=showAll?show=showAll">Products</a></li>
-        <li><a href="signup.jsp?show=showAll">My Account</a></li>
+        <li><a href="item.jsp?show=showAll">Products</a></li>
+        <li><a href="userProfile.jsp?show=showAll">My Account</a></li>
         <li><a href="confirmLogout.jsp?show=showAll">logout</a></li>
         <li><a href="#" class="btn-floating teal darken-4 z-depth-0" id="cartIcon">
           <i class="material-icons" id="cartIcon" onclick="aa()">add_shopping_cart</i>
@@ -53,7 +53,7 @@
          <li><a href="index.jsp?show=showAll">Home</a></li>
         <li><a href="#search">Search</a></li>
         <li><a href="item.jsp?show=showAll">Products</a></li>
-        <li><a href="signup.jsp?show=showAll">My Account</a></li>
+        <li><a href="userProfile.jsp?show=showAll">My Account</a></li>
         <li><a href="confirmLogout.jsp?show=showAll">logout</a></li>
         <li><a href="mobileCart.jsp?show=showAll" class="btn-floating white darken-4 z-depth-0" id="cartIcon">
           <i class="material-icons" id="cartIcon" onclick="aa()">add_shopping_cart</i>

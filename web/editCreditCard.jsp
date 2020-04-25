@@ -1,12 +1,11 @@
 <%-- 
-    Document   : login
-    Created on : Mar 1, 2020, 2:18:58 PM
+    Document   : editCreditCard
+    Created on : Apr 25, 2020, 10:48:13 AM
     Author     : noobmaster
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
     <head>
       <link href="css/eShop.css" rel="stylesheet"> 
@@ -42,7 +41,15 @@
    
                 
             });
-             
+            
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+              var oldNmae =  document.getElementById('oldN');
+              oldNmae.style.display = "none";
+                
+            });
+        
+   
            
     </script>
     </head>
@@ -62,21 +69,21 @@
   <%@ include file="includes/cart.jsp"  %>   
   
       
-  <form action="login" method="post">  
+  <form action="editCreditCard" method="post">  
       <div class="container" id="myForm">
       
           <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
   <div class="row">
         <div class="col s12">
             <div class="card-title center-align teal-text">
-                <h4>Login</h4>
+                <h4>Edit Credit Card</h4>
             </div>
         </div>
   </div>
   <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" name="email">
-          <label for="email">Email</label>
+          <input id="email" type="text" name="creditCard">
+          <label for="creditCard">Credit Card</label>
         </div>
       </div>
   
@@ -85,22 +92,28 @@
       
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" name="password">
-          <label for="password">Password</label>
+          <input id="password" type="password" class="validate" name="pin">
+          <label for="pin">Pin Number</label>
         </div>
       </div>
+        <div class="row" id="oldN">
+            <div class="input-field col s12">
 
+                <input type="text" value="<%= (String) session.getAttribute("useremail")%>" name="OldEmail">
+            </div>
+        </div>
+                    
     <p class="center">
       <label>
-        <input type="checkbox" class="filled-in" checked="checked" />
-        <span>Remember me</span>
+        
+          <span class="red-text">We will not share your credentials with any 3rd party members</span>
       </label>
      </p>
       
       
       <div class="row">
         <div class="col s12">
-        <input type="submit" value="Log in" class="btn" style="width:100%;">
+            <button type="submit" class="btn" style="width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>
         
         </div>
       

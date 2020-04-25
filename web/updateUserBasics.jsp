@@ -1,13 +1,11 @@
 <%-- 
-    Document   : signup
-    Created on : Mar 1, 2020, 4:16:59 PM
+    Document   : updateUserBasics
+    Created on : Apr 25, 2020, 8:57:00 AM
     Author     : noobmaster
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%@page import="java.sql.*" %> 
-
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +20,18 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script>
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+              var oldNmae =  document.getElementById('oldN');
+              oldNmae.style.display = "none";
+                
+            });
+        
+        
+        </script>
+        
+        
         <style>
     
             body {
@@ -31,24 +41,7 @@
             }
 
         </style>  
-        <script>
-            
-            var resulSignUp = "regFailed";
-           
-            
-            document.addEventListener("DOMContentLoaded" , function(){
-                
-                if(resulSignUp === '<%= request.getParameter("result")%>' ){
-          
-                        M.toast({ html: "Something Went Wrong!" });
-          
-                }
-   
-                
-            });
-             
-           
-        </script>
+       
     </head>
     
 
@@ -72,45 +65,49 @@
 
 
 
-        <form method="post" action="signup">
+        <form method="post" action="updateUserBasics">
             <div class="container">
-
+          
+                    
                 <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
+                    
+                   
+                    
                     <div class="row">
                         <div class="col s12">
                             <div class="card-title center teal-text">
-                                <h4>Sign up Form</h4>
+                                <h4>Edit Profile</h4>
                             </div>
                         </div>
                     </div>
-
+                     <div class="row" id="oldN">
+                        <div class="input-field col s12">
+                            
+                            <input type="text" value="<%= request.getParameter("email") %>" name="OldEmail">
+                        </div>
+                    </div>
+                    
+                    
                     <div class="row">
                         <div class="col s12">
                            
                                 <div class="input-field col s12 m6">
-                                    <input  id="first_name" type="text" class="validate" name="first_name">
+                                    <input  id="first_name" type="text" class="validate" name="first_name" value="<%= request.getParameter("fname") %>">
                                     <label for="first_name">First Name</label>
                                 </div>
                                 <div class="input-field col s12 m6">
-                                    <input id="last_name" type="text" class="validate" name="last_name">
+                                    <input id="last_name" type="text" class="validate" name="last_name" value="<%= request.getParameter("lname") %>">
                                     <label for="last_name">Last Name</label>
                                 </div>
                           
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" name="email">
+                                    <input id="email" type="email" class="validate" name="email" value="<%= request.getParameter("email") %>">
                                     <label for="email">Email</label>
                                 </div>
                            
 
                            
-                                <div class="input-field col s12 m6">
-                                    <input id="password" type="password" class="validate" name="password">
-                                    <label for="password">Password</label>
-                                </div>
-                                <div class="input-field col s12 m6">
-                                    <input id="cpassword" type="password" class="" name="cpassword">
-                                    <label for="cpassword">Confirm Password</label>
-                                </div>
+                                
                             
 
                             
@@ -121,28 +118,21 @@
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
                                 </select>
-                                <label>Materialize Select</label>
+                                <label>Select Your Country</label>
                             </div>
 
 
                             <div class="input-field col s12">
-                                <textarea id="textarea" class="materialize-textarea" name="address"></textarea>
+                                <textarea id="textarea" class="materialize-textarea" name="address"><%= request.getParameter("addres") %></textarea>
                                 <label for="address">Enter your address</label>
                             </div>
-                            <div class="input-field col s12 m8">
-                                    <input  id="credit_card" type="text" class="validate" name="credit_card">
-                                    <label for="credit_card">Credit Card</label>
-                            </div>
-                            <div class="input-field col s12 m4">
-                                    <input  id="credit_cardPin" type="password" class="validate" name="credit_cardPin">
-                                    <label for="credit_cardPin">Credit Card</label>
-                            </div>
+                            
 
                            
                             <div class="row">
                                 <div class="col s12">
-                                    <input type="submit" value="submit" class="btn" style="width:100%;">
-
+                                    
+                                    <button type="submit" class="btn" style="width: 100%; vertical-align:-18px;width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>            
                                 </div>
 
                             </div>

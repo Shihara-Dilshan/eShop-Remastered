@@ -53,7 +53,7 @@ public class UpdateItem extends HttpServlet {
         this.Oldbname = Oldbname;
     }
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
       ItemDaoImplement sdaoIupdate = new ItemDaoImplement();
          
@@ -69,21 +69,16 @@ public class UpdateItem extends HttpServlet {
         
         fileName = getFileName(part);
        
-        savePath = "home\\noobmaster\\NetBeansProjects\\WebApplication3\\web\\image\\"+ fileName ;
         
-        
-        if(sdaoIupdate.UpdateItem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , savePath , Oldbname )){
-            
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
+        if(sdaoIupdate.UpdateItem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , Oldbname )){
             
             
-            response.sendRedirect("adminindex.jsp");
+            response.sendRedirect("ManageItem.jsp?result=updated");
             
             
         }
         else{
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("errorPage.jsp");
         }
          
         

@@ -38,7 +38,33 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+       <style>
+    
+        #myContaner {
+        
+            background-image: url(https://raw.githubusercontent.com/Shihara-Dilshan/img/master/bgtg.jpg);
+            
+        }
+
+      </style>   
+      <script>
+            
+            var resulupdate = "updated";
+           
+            
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+                if(resulupdate === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Items Successfully updated" });
+          
+                }
+   
+                
+            });
+             
+           
+    </script>
       
     </head>
     
@@ -64,7 +90,7 @@
                  <div>
                     
                          <div class="col s4">
-                             <div class="card">
+                             <div class="card" id="myContaner">
                                  <div class="card-image">
 
 

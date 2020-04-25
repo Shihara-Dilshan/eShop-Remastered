@@ -34,7 +34,38 @@
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+        <script>
+            
+            var resulItem = "addedItem";
+            var resulCat = "addedCat";
+            var resultItemDelect = "ItemDelected";
+            var resultCatDelect = "CatDelected";
+            
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+                if(resulItem === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfully Added the Item" });
+          
+                }else if(resulCat === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfully Added the Category" });
+          
+                }else if(resultItemDelect === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfully Delected the Item" });
+          
+                }else if(resultCatDelect === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfully Delected the Category" });
+          
+                }  
+   
+                
+            });
+             
+           
+        </script>
 
     </head>
 

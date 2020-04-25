@@ -33,11 +33,7 @@ public class DeleteCat extends HttpServlet {
         
         if(sdaoDelete.DeleteCategory(Cname)){
             
-            //HttpSession session = request.getSession();
-            //session.setAttribute("additem", "yes");
-            
-            
-            response.sendRedirect("adminindex.jsp");
+            response.sendRedirect("adminindex.jsp?result=CatDelected");
             
             
         }

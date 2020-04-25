@@ -8,7 +8,8 @@ interface UserDao {
     boolean loginCheck();
     boolean signUp();
     boolean updateUserProfile();
-    boolean searchItem();
+    boolean updateUserBasics();
+    boolean updateCreditCard();
     
     
 }

@@ -50,7 +50,7 @@
   <div class="row">
         <div class="col s12">
             <div class="card-title center-align teal-text">
-                <h4>Confirm Logout</h4>
+                <h4>Confirm Delete Item</h4>
             </div>
         </div>
   </div>
@@ -83,7 +83,7 @@
         </div>
           <div class="col s6">
               <a href="DeleteItem?itemname=<%=request.getParameter("IName") %>">
-                  <input type="submit" value="Log out" class="btn red" style="width:100%;" onclick="removeValues()">
+                  <input type="submit" value="Confirm" class="btn red" style="width:100%;" onclick="removeValues()">
               </a>
         </div>
           
