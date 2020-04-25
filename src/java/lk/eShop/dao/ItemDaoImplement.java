@@ -15,6 +15,9 @@ public class ItemDaoImplement implements ItemDao {
     private final String sqlItemUpdate = "update item set name=? , descr=? , price=? , catName=? , qty=? , filename=?  where name=? ";
     private final String sqlCatDelete = "delete from category where Cname=?";
     private final String sqlItemDelete = "delete from item where name=?";
+    private final String sqlbuyItem = "update ItemCopy set cusid=? where itemId=? and cusid is null limit 1";
+    
+    
     
     @Override
     public boolean AddCategory(){
@@ -56,6 +59,13 @@ public class ItemDaoImplement implements ItemDao {
         
         return false;
         
+    }
+    
+    @Override
+    public boolean buyItem(){
+    
+        return false;
+    
     }
     
     //overloading the real AddCategory function
@@ -280,6 +290,39 @@ public class ItemDaoImplement implements ItemDao {
         
     }
     
-     
+    //overloading the real buyItem function
+    public boolean buyItem(int UserId , int ItemId){
+    
+        
+            try{
+            DataSource DeleteItemsource = new DataSource();
+            Connection con = DeleteItemsource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlbuyItem);
+           
+            st.setString(1, String.valueOf(UserId));
+            st.setString(2, String.valueOf(ItemId));
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    }
+    
     
 }

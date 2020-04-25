@@ -29,8 +29,8 @@
   <!DOCTYPE html>
   <html>
     <head>
-      
-     <link href="css/eShop.css" rel="stylesheet"> 
+      <title>Manage Category</title>
+      <link href="css/eShop.css" rel="stylesheet"> 
       <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

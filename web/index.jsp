@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      
+<title>Index</title>      
 <!--My CSS -->
 <link href="css/eShop.css" rel="stylesheet"> 
 <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> 
@@ -46,7 +46,6 @@
              
            
  </script>
-
 
 
 
@@ -136,6 +135,35 @@
                   
 
             %>
+            
+<%
+                        
+
+        String UEmail = (String)session.getAttribute("useremail");
+                    
+      
+        PreparedStatement st2 = con.prepareStatement("select * from user where name = ?");
+        st2.setString(1, UEmail);
+        ResultSet rs2 =st2.executeQuery();
+                        
+       
+        int uID = 0;
+                         
+        while (rs2.next()) {
+
+           
+            uID = rs2.getInt("id");
+                               
+            session.setAttribute("userID", uID);
+                         
+        
+        }
+                        
+                         
+                
+                  
+
+%>
             <div class="row">
                 <div class="col s12 m4">
                     <div class="card">

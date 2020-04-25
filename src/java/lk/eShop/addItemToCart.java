@@ -19,6 +19,11 @@ public class addItemToCart extends HttpServlet {
 
     private String Iname;
     private String Iprice;
+    private int IId;
+
+    public void setIId(int IId) {
+        this.IId = IId;
+    }
     
 
     public void setIname(String Iname) {
@@ -36,10 +41,12 @@ public class addItemToCart extends HttpServlet {
        
             this.setIname(request.getParameter("item"));
             this.setIprice(request.getParameter("price"));
-        
+            this.setIId(Integer.parseInt(request.getParameter("itemID")));
+       
             Item item = new Item();
             item.setItemName(Iname);
             item.setItemPrice(Iprice);
+            item.setItemRealid(IId);
             item.setId();
             
             

@@ -1,16 +1,27 @@
 <%-- 
-    Document   : mobileCart
-    Created on : Apr 20, 2020, 6:31:31 AM
+    Document   : purchusePage
+    Created on : Apr 25, 2020, 2:39:04 PM
     Author     : noobmaster
 --%>
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+        if(session.getAttribute("useremail") == null){
+        
+        
+            response.sendRedirect("login.jsp");
+        
+        
+        
+        }
+            
+%>        
+
 
   <!DOCTYPE html>
   <html>
     <head>
-      <title>Mobile Cart</title>
+      <title>Purchuse</title>
       <link href="css/eShop.css" rel="stylesheet"> 
       <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
       <!--Import Google Icon Font-->
@@ -60,7 +71,7 @@
       
 
      <section id="cartSection">
-         <div class="container white aCont" style="margin-top: 2%;">
+         <form action="buy" method="post" class="container white aCont" style="margin-top: 2%;">
              <table class="striped highlight centered" style="height: 100%;">
                  <thead>
                  <div class="col s12 center-align" style="padding-top: 2%;">
@@ -109,14 +120,15 @@
                      %>
                  </tbody>
              </table>
-         </div>
                  <div style="text-align: center;padding-top: 20px;">
-                     <a href="purchusePage.jsp?show=showAll"><button class="btn waves-effect waves-light" type="submit" name="action">Check Out
+                     <button type="submit" class="btn waves-effect waves-light" type="submit" name="action">Buy
                              <i class="material-icons right">add_shopping_cart</i>
                          </button>
-                     </a>
+                    
 
                  </div>
+         </form>
+                 
      </section>
 
 

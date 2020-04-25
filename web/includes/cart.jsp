@@ -45,7 +45,7 @@
 <section id="cartSection">
     <div id="cart" class="hideCart test">
         <div>
-            <form action="#" method="GET">
+          
                 <div class="col s4">
                     <div class="card">
                         <div class="card-image">
@@ -116,10 +116,10 @@
                                 </div>
                             </div>
                             <div style="text-align: center;padding-top: 20px;">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Check Out
+                                <a href="purchusePage.jsp?show=showAll"><button class="btn waves-effect waves-light" type="submit" name="action">Check Out
                                     <i class="material-icons right">add_shopping_cart</i>
                                 </button>
-
+                                </a>
 
                             </div>
 
@@ -128,7 +128,7 @@
 
                     </div>
 
-            </form>
+          
         </div>
 
 

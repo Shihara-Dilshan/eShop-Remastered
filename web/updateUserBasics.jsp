@@ -11,6 +11,7 @@
 <html>
 
     <head>
+        <title>Update User details</title>
         <link href="css/eShop.css" rel="stylesheet"> 
         <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
         <!--Import Google Icon Font-->

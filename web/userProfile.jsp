@@ -15,6 +15,7 @@
 <html>
 
     <head>
+        <title>User Profile</title>
         <link href="css/eShop.css" rel="stylesheet"> 
         <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> <!--load all styles -->
         <!--Import Google Icon Font-->
@@ -109,6 +110,7 @@
                          String Email = "";
                          String Country = "";
                          String Address = "";
+                        
                          
                          while (rs.next()) {
 
@@ -117,6 +119,7 @@
                                Email = rs.getString("name");
                                Country = rs.getString("country");
                                Address = rs.getString("address");
+                              
                          }
                         
                          

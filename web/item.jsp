@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-      
+<title>Item</title>     
 <!--My CSS -->
 <link href="css/eShop.css" rel="stylesheet"> 
 <link href="css/fontawesome-free-5.12.1-web/css/all.css" rel="stylesheet"> 
@@ -145,7 +145,7 @@
                         <div class="card-action">
                              
                             
-                             <a href="addItemToCart?show=<%=rs.getString("catName") %>&item=<%=rs.getString("name") %>&price=<%=rs.getString("price") %>&returnValue=<%= request.getParameter("show") %>" class="btn" style="width:100%;">Add To Cart  <i class="material-icons" style="vertical-align:-6px;">add_shopping_cart</i></a>
+                             <a href="addItemToCart?show=<%=rs.getString("catName") %>&item=<%=rs.getString("name") %>&price=<%=rs.getString("price") %>&returnValue=<%= request.getParameter("show") %>&itemID=<%= rs.getInt("id") %>" class="btn" style="width:100%;">Add To Cart  <i class="material-icons" style="vertical-align:-6px;">add_shopping_cart</i></a>
                   
                         </div>
                     </div>

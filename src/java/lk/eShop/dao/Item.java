@@ -7,6 +7,10 @@ public class Item {
     private String ItemPrice;
     private int id;
     private int idCount = 0 ;
+    private int itemRealid;
+
+   
+    
 
     
     public void setItemName(String ItemName) {
@@ -36,6 +40,12 @@ public class Item {
         return this.id;
     }
 
+    public void setItemRealid(int itemRealid) {
+        this.itemRealid = itemRealid;
+    }
     
-   
+    public int getItemRealid() {
+        return itemRealid;
+    }
+
 }

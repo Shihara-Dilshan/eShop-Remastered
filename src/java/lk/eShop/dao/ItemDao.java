@@ -9,5 +9,6 @@ public interface ItemDao {
     public boolean UpdateItem();
     public boolean DeleteItem();
     public boolean DeleteCategory();
+    public boolean buyItem();
     
 }
