@@ -10,6 +10,6 @@ interface UserDao {
     boolean updateUserProfile();
     boolean updateUserBasics();
     boolean updateCreditCard();
-    
+    boolean changeUserPassword();
     
 }

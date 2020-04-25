@@ -27,12 +27,27 @@
         <script>
             
             var result = "updated";
+            var result2 = "pasfailed";
+            var result3 = "updatefailed";
+            var result4 = "cardFailed";
            
             document.addEventListener("DOMContentLoaded" , function(){
                 
                 if(result === '<%= request.getParameter("result")%>' ){
           
                         M.toast({ html: "Profile Successfully Updated" });
+          
+                }else if(result2 === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Unsuccessfull Your Old password is incorrect" });
+          
+                }else if(result3 === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Unsuccessfull! Something went wrong!" });
+          
+                }else if(result4 === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Unsuccessfull! Check your card details!" });
           
                 }
    
@@ -144,7 +159,7 @@
                                     <label for="password">Password</label>
                                 </div>
                                 <div class="input-field col s4 m6">
-                                    <a href="editCreditCard.jsp"><button class="btn" style="width: 100%; vertical-align:-18px;">edit <i class="material-icons" style="vertical-align: -4px;">edit</i></button></a>
+                                    <a href="changePassword.jsp?show=showAll&email=<%= Email %>"><button class="btn" style="width: 100%; vertical-align:-18px;">edit <i class="material-icons" style="vertical-align: -4px;">edit</i></button></a>
                                 </div>
                             
 

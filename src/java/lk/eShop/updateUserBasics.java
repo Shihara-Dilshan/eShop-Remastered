@@ -52,7 +52,7 @@ public class updateUserBasics extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        UserDaoImplement updatedao = new UserDaoImplement();
+        UserDaoImplement updatedaoUB = new UserDaoImplement();
         
         this.setFname(request.getParameter("email"));
         this.setFirstName(request.getParameter("first_name"));
@@ -61,14 +61,14 @@ public class updateUserBasics extends HttpServlet {
         this.setAddress(request.getParameter("address"));
         this.setOldEmail(request.getParameter("OldEmail"));
         
-        if(updatedao.updateUserBasics(Fname , firstName, lastName, country, address ,OldEmail)){
+        if(updatedaoUB.updateUserBasics(Fname , firstName, lastName, country, address ,OldEmail)){
             
             response.sendRedirect("userProfile.jsp?result=updated");
             
             
         }
         else{
-            response.sendRedirect("signup.jsp?result=regFailed");
+            response.sendRedirect("userProfile.jsp?result=updatefailed");
         }
          
         }  

@@ -55,7 +55,7 @@ public class UpdateItem extends HttpServlet {
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-      ItemDaoImplement sdaoIupdate = new ItemDaoImplement();
+      ItemDaoImplement sdaoIupdateI = new ItemDaoImplement();
          
         
         
@@ -70,7 +70,7 @@ public class UpdateItem extends HttpServlet {
         fileName = getFileName(part);
        
         
-        if(sdaoIupdate.UpdateItem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , Oldbname )){
+        if(sdaoIupdateI.UpdateItem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , Oldbname )){
             
             
             response.sendRedirect("ManageItem.jsp?result=updated");

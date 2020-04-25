@@ -10,48 +10,45 @@ import javax.servlet.http.HttpServletResponse;
 import lk.eShop.dao.UserDaoImplement;
 
 
-@WebServlet(name = "editCreditCard", urlPatterns = {"/editCreditCard"})
-public class editCreditCard extends HttpServlet {
+@WebServlet(name = "ChangeUserPassword", urlPatterns = {"/ChangeUserPassword"})
+public class ChangeUserPassword extends HttpServlet {
 
-    String CCardNo;
-    String Cpin;
+    String OldPassword;
+    String NewPassword;
     String Email;
 
-    
-
-    public void setCCardNo(String CCardNo) {
-        this.CCardNo = CCardNo;
+    public void setOldPassword(String OldPassword) {
+        this.OldPassword = OldPassword;
     }
 
-    public void setCpin(String Cpin) {
-        this.Cpin = Cpin;
+    public void setNewPassword(String NewPassword) {
+        this.NewPassword = NewPassword;
     }
-    
+
     public void setEmail(String Email) {
         this.Email = Email;
     }
+
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        UserDaoImplement sdaoEditCcard = new UserDaoImplement();
+        UserDaoImplement updatePWDdao = new UserDaoImplement();
         
-        this.setCCardNo(request.getParameter("creditCard"));
-        this.setCpin(request.getParameter("pin"));
+        this.setOldPassword(request.getParameter("oldPword"));
+        this.setNewPassword(request.getParameter("newPassword"));
         this.setEmail(request.getParameter("OldEmail"));
         
-        if(sdaoEditCcard.updateCreditCard(CCardNo, Cpin, Email)){
+        if(updatePWDdao.changeUserPassword(OldPassword ,NewPassword,Email )){
             
             response.sendRedirect("userProfile.jsp?result=updated");
             
             
         }
         else{
-            response.sendRedirect("signup.jsp?result=cardFailed");
+             response.sendRedirect("userProfile.jsp?result=pasfailed");
         }
-         
-        }  
         
         
         
-    
+    }
 }
