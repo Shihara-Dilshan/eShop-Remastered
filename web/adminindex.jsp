@@ -109,7 +109,7 @@
         <%@ include file="includes\adminheaderNormal.jsp"  %>  
 
 
-
+       
         <section class="section section-icons transparent lighten-4 center">
             <div class="container">
                 <div class="row">
@@ -228,6 +228,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="js/removeVal.js"></script>
+        <script type="text/javascript" src="js/App.js"></script>
         <script>
             $(document).ready(function () {
                 $('.sidenav').sidenav();

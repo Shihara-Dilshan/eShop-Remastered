@@ -51,7 +51,7 @@
       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       
-      <form action="adminlogin" method="post">  
+      <form name="adminloginForm" action="adminlogin" method="post">  
       <div class="container" id="myForm">
       
            <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
@@ -65,7 +65,7 @@
   <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate" name="email">
-          <label for="email">Email</label>
+          <label id="ALemailLable" for="email">Email</label>
         </div>
       </div>
   
@@ -75,7 +75,7 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="password">
-          <label for="password">Password</label>
+          <label id="ALpwdLable" for="password">Password</label>
         </div>
       </div>
 
@@ -89,7 +89,7 @@
       
       <div class="row">
         <div class="col s12">
-        <input type="submit" value="Log in" class="btn" style="width:100%;">
+        <input id="submitALform" type="submit" value="Log in" class="btn" style="width:100%;">
         
         </div>
       
@@ -106,16 +106,16 @@
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-
+      <script type="text/javascript" src="js/App.js"></script>
       <script>
           /*$(document).ready(function(){
           $('.sidenav').sidenav();
         
           });
           */
-          document.addEventListener('DOMContentLoaded' , () => {
+          document.addEventListener('DOMContentLoaded' , function () {
               
-             let sidenav = document.querySelector('.sidenav');
+             var sidenav = document.querySelector('.sidenav');
              M.Sidenav.init(sidenav);
               
           });

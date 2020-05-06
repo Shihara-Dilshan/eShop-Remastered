@@ -1,12 +1,11 @@
 //do every thing afer the content is loaded on the screen
 document.addEventListener('DOMContentLoaded' , function(){
-    
+   
     
     //cache the DOM
     var cart = document.getElementById("cart");
     var cartIcon = document.getElementById("cartIcon");
     var signUpForm = document.getElementById("submitForm");
-    var loginForm = document.getElementById("loginForm");
     var signUpEmailLable = document.getElementById("emailLable");
     var signUppwdLabel = document.getElementById("passwordLable"); 
     var signUCppwdLabel = document.getElementById("cpasswordLable");
@@ -16,58 +15,15 @@ document.addEventListener('DOMContentLoaded' , function(){
     var addressLabel = document.getElementById("addressLabel");
     var creditCardLabel = document.getElementById("creditCardLabel");
     var creditPinLabel = document.getElementById("creditPinLabel");
-    var LoginEmailLable = document.getElementById("loginEmail");
-    var LoginPwdLable = document.getElementById("loginPWDlable");
-     
+    
+    
+    
     var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
     var checkForLetters = /^[a-zA-Z]+$/ ;
     var creditCardValid = /^[0-9]{16}$/ ; 
     var creditCarPINValid = /^[0-9]{4}$/ ; 
    
     
-    
-    //validate login form
-    loginForm.addEventListener('click', function (event) {
-        
-        var lEmail = document.forms["loginForm"]["email"].value.trim();
-        var lPaasword = document.forms["loginForm"]["password"].value.trim();
-        
-        if(lEmail === ""){
-            
-            event.preventDefault();
-            LoginEmailLable.style.color = "red";
-            LoginEmailLable.textContent = "This feild cannot be empty";
-        }else if (!emailPattern.test(lEmail)) {
-
-            event.preventDefault();
-            LoginEmailLable.style.color = "red";
-            LoginEmailLable.textContent = "Invalid Email address";
-
-        }
-        
-        if(lPaasword ===""){
-            
-            event.preventDefault();
-            LoginPwdLable.style.color = "red";
-            LoginPwdLable.textContent = "This feild cannot be empty";
-        }
-        
-         //set default colors and values after 3000ms
-        setTimeout(function errorLogin() {
-
-            LoginEmailLable.style.color = "grey";
-            LoginEmailLable.textContent = "Email";
-            
-            LoginPwdLable.style.color = "grey";
-            LoginPwdLable.textContent = "Password";
-
-            
-
-        }, 3000);
-
-    });
-   
-   
    
     //validate signUp Form 
     signUpForm.addEventListener('click', function (event) {
@@ -215,7 +171,7 @@ document.addEventListener('DOMContentLoaded' , function(){
 
     });
     
-    
+   
     
     
     //Show And Hide Cart
@@ -229,6 +185,112 @@ document.addEventListener('DOMContentLoaded' , function(){
     
 });
 
+document.addEventListener('DOMContentLoaded' , function(){
+    var loginForm = document.getElementById('submitLForm');
+    var loginEmailLable = document.getElementById("loginEmail");
+    var loginPWDlable = document.getElementById("loginPWDlable");
+    
+    var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
+    
+    //validate login form 
+    loginForm.addEventListener('click' , function (event){
+        
+        
+        var logEmail = document.forms["loginForm"]["email"].value.trim();
+        var logPassword = document.forms["loginForm"]["password"].value.trim();
+        
+        if(logEmail === ""){
+            
+            event.preventDefault();
+            loginEmailLable.style.color = "red";
+            loginEmailLable.textContent = "This feild cannot be empty";
+        }else if(!emailPattern.test(logEmail)){
+            
+            event.preventDefault();
+            loginEmailLable.style.color = "red";
+            loginEmailLable.textContent = "Enter Email in vlaid format";
+            
+        }
+        
+        if(logPassword === ""){
+            
+            event.preventDefault();
+            loginPWDlable.style.color = "red";
+            loginPWDlable.textContent = "This feild cannot be empty";
+        }
+        
+        //set default colors and values after 3000ms
+        setTimeout(function error() {
+
+            loginEmailLable.style.color = "grey";
+            loginEmailLable.textContent = "Email";
+
+            loginPWDlable.style.color = "grey";
+            loginPWDlable.textContent = "Password";
+
+        }, 3000);
+        
+        
+    });
+    
+    
+});
+
+
+document.addEventListener('DOMContentLoaded' , function(){
+    var AloginForm = document.getElementById('submitALform');
+    var AloginEmailLable = document.getElementById("ALemailLable");
+    var AloginPWDlable = document.getElementById("ALpwdLable");
+    
+    var AemailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
+    
+    //validate login form 
+    AloginForm.addEventListener('click' , function (event){
+        
+        
+        var AlogEmail = document.forms["adminloginForm"]["email"].value.trim();
+        var AlogPassword = document.forms["adminloginForm"]["password"].value.trim();
+        
+        if(AlogEmail === ""){
+            
+            event.preventDefault();
+            AloginEmailLable.style.color = "red";
+            AloginEmailLable.textContent = "This feild cannot be empty";
+        }else if(!AemailPattern.test(AlogEmail)){
+            
+            event.preventDefault();
+            AloginEmailLable.style.color = "red";
+            AloginEmailLable.textContent = "Enter Email in vlaid format";
+            
+        }
+        
+        if(AlogPassword === ""){
+            
+            event.preventDefault();
+            AloginPWDlable.style.color = "red";
+            AloginPWDlable.textContent = "This feild cannot be empty";
+        }
+        
+        //set default colors and values after 3000ms
+        setTimeout(function error() {
+
+            AloginEmailLable.style.color = "grey";
+            AloginEmailLable.textContent = "Email";
+
+            AloginPWDlable.style.color = "grey";
+            AloginPWDlable.textContent = "Password";
+
+        }, 3000);
+        
+        
+    });
+    
+    
+});
+
+
 function myTrim(x) {
   return x.replace(/\s/g, "");
 }
+
+ 
