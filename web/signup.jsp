@@ -73,7 +73,7 @@
 
 
 
-        <form method="post" action="signup">
+        <form name="signUpForm" method="post" action="signup">
             <div class="container">
 
                 <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
@@ -90,59 +90,59 @@
                            
                                 <div class="input-field col s12 m6">
                                     <input  id="first_name" type="text" class="validate" name="first_name">
-                                    <label for="first_name">First Name</label>
+                                    <label for="first_name" id="fnameLabel">First Name</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input id="last_name" type="text" class="validate" name="last_name">
-                                    <label for="last_name">Last Name</label>
+                                    <label for="last_name" id="lnameLabel">Last Name</label>
                                 </div>
                           
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" name="email">
-                                    <label for="email">Email</label>
+                                    <input id="email" type="email" name="email">
+                                    <label for="email" id="emailLable">Email</label>
                                 </div>
                            
 
                            
                                 <div class="input-field col s12 m6">
                                     <input id="password" type="password" class="validate" name="password">
-                                    <label for="password">Password</label>
+                                    <label for="password" id="passwordLable">Password</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input id="cpassword" type="password" class="" name="cpassword">
-                                    <label for="cpassword">Confirm Password</label>
+                                    <label for="cpassword" id="cpasswordLable">Confirm Password</label>
                                 </div>
                             
 
                             
                             <div class="input-field col s12">
                                 <select  name="country">
-                                    <option value="" disabled selected>Choose your Country</option>
+                                    <option value="1" disabled selected>Choose your Country</option>
                                     <option value="Sri Lanka">Sri Lanka </option>
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
                                 </select>
-                                <label>Materialize Select</label>
+                                <label id="countryLabel">Country Select</label>
                             </div>
 
 
                             <div class="input-field col s12">
                                 <textarea id="textarea" class="materialize-textarea" name="address"></textarea>
-                                <label for="address">Enter your address</label>
+                                <label for="address" id="addressLabel">Enter your address</label>
                             </div>
                             <div class="input-field col s12 m8">
                                     <input  id="credit_card" type="text" class="validate" name="credit_card">
-                                    <label for="credit_card">Credit Card</label>
+                                    <label for="credit_card" id="creditCardLabel">Credit Card</label>
                             </div>
                             <div class="input-field col s12 m4">
                                     <input  id="credit_cardPin" type="password" class="validate" name="credit_cardPin">
-                                    <label for="credit_cardPin">Credit Card</label>
+                                    <label for="credit_cardPin" id="creditPinLabel">Pin Number</label>
                             </div>
 
                            
                             <div class="row">
                                 <div class="col s12">
-                                    <input type="submit" value="submit" class="btn" style="width:100%;">
+                                    <input type="submit" id="submitForm" value="submit" class="btn" style="width:100%;">
 
                                 </div>
 

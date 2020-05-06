@@ -131,7 +131,7 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="card-title center teal-text">
-                                <h4>My Profile</h4>
+                                <h4>My Profile <i class="material-icons medium" style="vertical-align: -15px;">account_circle</i><a href="#"><i class="material-icons right black-text medium">child_friendly</i></a></h4>
                                 <a href="updateUserBasics.jsp?show=showAll&email=<%= Email %>&fname=<%= Uname %>&lname=<%= Lname %>&addres=<%= Address %>"><button class="btn red" style="width: 100%; vertical-align:-18px;"> to edit your profile , click here</button></a>
                             </div>
                         </div>

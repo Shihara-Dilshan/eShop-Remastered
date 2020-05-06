@@ -140,10 +140,10 @@
                                                  <td ><img style="width:50px; height: 50px; border-radius: 50%;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=rs.getString("filename") %>"></td>
                                                  <td> 
                                                      <a href="UpdateItem.jsp?name=<%=rs.getString("name") %>&desc=<%=rs.getString("descr") %>&price=<%=rs.getString("price") %>&image=<%=rs.getString("filename") %>&qty=<%=rs.getString("qty") %>&catName=<%=rs.getString("catName") %>">
-                                                         <i class="material-icons">edit</i>
+                                                         <i class="material-icons black-text">edit</i>
                                                      </a>
                                                      <a href="warningItem.jsp?IName=<%=rs.getString("name") %>">
-                                                         <i class="material-icons">delete</i>
+                                                         <i class="material-icons black-text">delete</i>
                                                      </a>
                                                  </td>
                                              </tr>    

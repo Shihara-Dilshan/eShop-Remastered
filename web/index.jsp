@@ -31,13 +31,17 @@
  <script>
             
             var resulSignUp = "Registed";
-           
+            var resultBuy = "buyTrue";
             
             document.addEventListener("DOMContentLoaded" , function(){
                 
                 if(resulSignUp === '<%= request.getParameter("result")%>' ){
           
                         M.toast({ html: "Successfully registerd!" });
+          
+                }else if(resultBuy === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Successfull. Your Items Will be delivered soon!" });
           
                 }
    
@@ -58,28 +62,28 @@
 <div class="slider" style="z-index: -1">
     <ul class="slides">
         <li>
-            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/close-up-photography-of-red-and-black-nike-running-shoe-786003.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/erik-mclean-nfoRa6NHTbU-unsplash.jpg"> <!-- random image -->
             <div class="caption center-align">
                 <h3>Fashion With a leap</h3>
                 <h5 class="light grey-text text-lighten-3"> Up to 50% Discounts on your cloths</h5>
             </div>
         </li>
         <li>
-            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/assorted-color-smartphone-cases-374117.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/brooke-cagle-WHWYBmtn3_0-unsplash.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>24/7 Service available</h3>
                 <h5 class="light grey-text text-lighten-3">Shop anytime anywhere</h5>
             </div>
         </li>
         <li>
-            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/person-holding-book-from-shelf-1370298.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/sahin-yesilyaprak-9eGMyzOSyYE-unsplash.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>All about your choice</h3>
                 <h5 class="light grey-text text-lighten-3">100000+ items. 300+ manufactures </h5>
             </div>
         </li>
         <li>
-            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/pair-of-laced-up-black-low-top-sneakers-847371.jpg"> <!-- random image -->
+            <img src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/fashion-fashionable-footwear-leather-267301.jpg"> <!-- random image -->
             <div class="caption left-align">
                 <h3>Fast delivery</h3>
                 <h5 class="light grey-text text-lighten-3">Shop.lk provides fast and secure delivery service</h5>
@@ -292,7 +296,7 @@
         <div class="row">
             <div class="col s12 m3">
 
-                <img class="materialboxed responsive-img" width="650" src="image/macro-photography-of-pair-of-black-and-white-nike-running-1124466.jpg">
+                <img class="materialboxed responsive-img" width="650" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/apple-apple-devices-blur-cellphone-269323.jpg">
             </div>
             <div class="col s12 m3">
 

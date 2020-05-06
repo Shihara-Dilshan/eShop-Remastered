@@ -33,7 +33,8 @@
                 if (request.getServletContext().getAttribute("cartItemList") != null) {
                     arrayListForView = (ArrayList<Item>) request.getServletContext().getAttribute("cartItemList");
                 }
-
+                
+                int countItem = arrayListForView.size();
                 if (!arrayListForView.isEmpty()) {
 
 
@@ -56,13 +57,13 @@
         <li><a href="userProfile.jsp?show=showAll">My Account</a></li>
         <li><a href="confirmLogout.jsp?show=showAll">logout</a></li>
         <li><a href="mobileCart.jsp?show=showAll" class="btn-floating white darken-4 z-depth-0" id="cartIcon">
-          <i class="material-icons" id="cartIcon" onclick="aa()">add_shopping_cart</i>
+          <i class="material-icons red-text" id="cartIcon" onclick="aa()">add_shopping_cart</i>
         
         </a></li>
         
         <li>
         
-        <span class="badge white-text red">5 items in cart
+        <span class="badge white-text red" style="width: 90%;"><%=countItem %> items in cart
         
         </span>
         </li>

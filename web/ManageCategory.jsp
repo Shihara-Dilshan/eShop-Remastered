@@ -139,11 +139,11 @@
                                                  <td ><img style="width:60px; height: 60px; border-radius: 50%;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=rs.getString("CfileName") %>"></td>
                                                  <td> 
                                                      <a href="UpdateCategory.jsp?catName=<%=rs.getString("Cname") %>&Des=<%=rs.getString("CDescription") %>&image=<%=rs.getString("CfileName") %>" >
-                                                         <i class="material-icons">edit
+                                                         <i class="material-icons black-text">edit
                                                          </i>
                                                      </a>
                                                      <a href="warningCategory.jsp?catName=<%=rs.getString("Cname") %>">
-                                                         <i class="material-icons">delete</i>
+                                                         <i class="material-icons black-text">delete</i>
                                                      </a></td>
                                              </tr>    
 
