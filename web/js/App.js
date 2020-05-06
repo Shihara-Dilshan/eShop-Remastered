@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded' , function(){
     var cart = document.getElementById("cart");
     var cartIcon = document.getElementById("cartIcon");
     var signUpForm = document.getElementById("submitForm");
+    var loginForm = document.getElementById("loginForm");
     var signUpEmailLable = document.getElementById("emailLable");
     var signUppwdLabel = document.getElementById("passwordLable"); 
     var signUCppwdLabel = document.getElementById("cpasswordLable");
@@ -15,11 +16,58 @@ document.addEventListener('DOMContentLoaded' , function(){
     var addressLabel = document.getElementById("addressLabel");
     var creditCardLabel = document.getElementById("creditCardLabel");
     var creditPinLabel = document.getElementById("creditPinLabel");
+    var LoginEmailLable = document.getElementById("loginEmail");
+    var LoginPwdLable = document.getElementById("loginPWDlable");
      
     var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
     var checkForLetters = /^[a-zA-Z]+$/ ;
     var creditCardValid = /^[0-9]{16}$/ ; 
     var creditCarPINValid = /^[0-9]{4}$/ ; 
+   
+    
+    
+    //validate login form
+    loginForm.addEventListener('click', function (event) {
+        
+        var lEmail = document.forms["loginForm"]["email"].value.trim();
+        var lPaasword = document.forms["loginForm"]["password"].value.trim();
+        
+        if(lEmail === ""){
+            
+            event.preventDefault();
+            LoginEmailLable.style.color = "red";
+            LoginEmailLable.textContent = "This feild cannot be empty";
+        }else if (!emailPattern.test(lEmail)) {
+
+            event.preventDefault();
+            LoginEmailLable.style.color = "red";
+            LoginEmailLable.textContent = "Invalid Email address";
+
+        }
+        
+        if(lPaasword ===""){
+            
+            event.preventDefault();
+            LoginPwdLable.style.color = "red";
+            LoginPwdLable.textContent = "This feild cannot be empty";
+        }
+        
+         //set default colors and values after 3000ms
+        setTimeout(function errorLogin() {
+
+            LoginEmailLable.style.color = "grey";
+            LoginEmailLable.textContent = "Email";
+            
+            LoginPwdLable.style.color = "grey";
+            LoginPwdLable.textContent = "Password";
+
+            
+
+        }, 3000);
+
+    });
+   
+   
    
     //validate signUp Form 
     signUpForm.addEventListener('click', function (event) {
@@ -166,6 +214,7 @@ document.addEventListener('DOMContentLoaded' , function(){
         
 
     });
+    
     
     
     

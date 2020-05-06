@@ -63,7 +63,7 @@
   <%@ include file="includes/cart.jsp"  %>   
   
       
-  <form action="login" method="post">  
+  <form name="loginForm" action="login" method="post">  
       <div class="container" id="myForm">
       
           <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
@@ -76,8 +76,8 @@
   </div>
   <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" name="email">
-          <label for="email">Email</label>
+          <input id="email" type="email" name="email">
+          <label id="loginEmail" for="email">Email</label>
         </div>
       </div>
   
@@ -87,7 +87,7 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="password">
-          <label for="password">Password</label>
+          <label id="loginPWDlable" for="password">Password</label>
         </div>
       </div>
 
@@ -101,12 +101,12 @@
       
       <div class="row">
         <div class="col s12">
-        <input type="submit" value="Log in" class="btn" style="width:100%;">
+        <input id="loginForm" type="submit" value="Log in" class="btn" style="width:100%;">
         
         </div>
       
       </div>
-    </form>
+    
   </div>
   </div>
       
