@@ -54,7 +54,7 @@
      
             
      
-      <form action="addItem" method="post" enctype="multipart/form-data">  
+      <form name="addItemForm" action="addItem" method="post" enctype="multipart/form-data">  
       <div class="container" id="myForm" >
       
       <div class="card-panel z-depth-3">
@@ -71,14 +71,14 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="name" type="text" class="validate" name="iname">
-          <label for="name">Item Name</label>
+          <label id="addItemNameLable" for="name">Item Name</label>
         </div>
       </div>
   
       <div class="row">
           <div class="input-field col s12">
           <input id="names" type="text" name="iprice">
-          <label for="iprice">Item Price</label>
+          <label id="addItemPriceLable" for="iprice">Item Price</label>
         </div>
       </div>
      
@@ -87,7 +87,7 @@
       <div class="row">
         <div class="input-field col s12">
           <textarea id="textarea" class="materialize-textarea" name="itemDesc"></textarea>
-          <label for="itemDesc">Description</label>
+          <label  id="addItemDescLable" for="itemDesc">Description</label>
         </div>
       </div>
       <!--div class="row">
@@ -99,7 +99,7 @@
       <div class="row">
           <div class="input-field col s12">
               <select style="font-size: 10px;" name="Icategory">
-                  <option value="" disabled selected>Choose Category</option>
+                  <option value="1" disabled selected>Choose Category</option>
                   <%
                
                 
@@ -121,19 +121,19 @@
                     }
                 %>
               </select>
-              
+              <label  id="addItemCatLable" for="itemDesc">Select Category</label>
           </div>
       </div>       
       <div class="row">
           <div class="input-field col s12">
           <input id="names" type="text" name="qty">
-          <label for="qty">Quantity </label>
+          <label id="addItemQTYLable" for="qty">Quantity </label>
         </div>
       </div>    
       <br>
       <div class="row">
           <div class="input-feild col s12 ">  
-               <label for="Iimage">Select an image</label>
+               <label id="addItemImageLable" for="Iimage">Select an image</label>
               <input type="file" name="Iimage" >
               
              
@@ -145,7 +145,7 @@
       
       <div class="row">
         <div class="col s12">
-        <input type="submit" value="Submit" class="btn" style="width:100%;">
+        <input id="sumbitAddItem" type="submit" value="Submit" class="btn" style="width:100%;">
         
         </div>
       

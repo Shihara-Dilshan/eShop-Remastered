@@ -56,7 +56,7 @@
         <%@ include file="includes\adminheaderNormal.jsp"  %>  
 
 
-        <form action="UpdateCategory" method="post" enctype="multipart/form-data">  
+        <form name="updateCategory" action="UpdateCategory" method="post" enctype="multipart/form-data">  
             <div class="container" id="myForm" >
 
                 <div class="card-panel z-depth-3">
@@ -79,7 +79,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="name" type="text" class="validate" name="bname">
-                            <label for="name"><%=request.getParameter("catName") %></label>
+                            <label for="name" id="updateNameLabel"><%=request.getParameter("catName") %></label>
                         </div>
                     </div>
                                 
@@ -89,15 +89,16 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <textarea id="textarea" class="materialize-textarea" name="bmanufast"></textarea>
-                                <label for="bmanufast"><%=request.getParameter("Des") %></label>
+                                <label for="bmanufast" id="updateDescLabel"><%=request.getParameter("Des") %></label>
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="input-feild col s12 ">  
+                                <label for="bimage" id="updateImageLabel">Choose an image</label>
                                 
                                 <input type="file" name="bimage"  ><br><br>
-                                <label for="bimage">Current image name is <%=request.getParameter("image") %></label>
+                                <label for="bimage" >Current image name is <%=request.getParameter("image") %></label>
                                 
                                 <img style="width:100%; height: auto;" src="https://raw.githubusercontent.com/Shihara-Dilshan/img/master/<%=request.getParameter("image") %>">
                                 
@@ -108,7 +109,7 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <input type="submit" value="Submit" class="btn" style="width:100%;">
+                                <input id="sumbitUpdateCat" type="submit" value="Submit" class="btn" style="width:100%;">
 
                             </div>
 
@@ -123,6 +124,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <script type="text/javascript" src="js/removeVal.js"></script>
+        <script type="text/javascript" src="js/App.js"></script>
         <script>
             $(document).ready(function () {
                 $('.sidenav').sidenav();

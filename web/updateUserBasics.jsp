@@ -66,7 +66,7 @@
 
 
 
-        <form method="post" action="updateUserBasics">
+        <form name="updateUSerBForm" method="post" action="updateUserBasics">
             <div class="container">
           
                     
@@ -94,16 +94,16 @@
                            
                                 <div class="input-field col s12 m6">
                                     <input  id="first_name" type="text" class="validate" name="first_name" value="<%= request.getParameter("fname") %>">
-                                    <label for="first_name">First Name</label>
+                                    <label id="updteFnameLable" for="first_name">First Name</label>
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <input id="last_name" type="text" class="validate" name="last_name" value="<%= request.getParameter("lname") %>">
-                                    <label for="last_name">Last Name</label>
+                                    <label id="updteLnameLable" for="last_name">Last Name</label>
                                 </div>
                           
                                 <div class="input-field col s12">
                                     <input id="email" type="email" class="validate" name="email" value="<%= request.getParameter("email") %>">
-                                    <label for="email">Email</label>
+                                    <label id="updteEmailLable" for="email">Email</label>
                                 </div>
                            
 
@@ -114,18 +114,18 @@
                             
                             <div class="input-field col s12">
                                 <select  name="country">
-                                    <option value="" disabled selected>Choose your Country</option>
+                                    <option value="1" disabled selected>Choose your Country</option>
                                     <option value="Sri Lanka">Sri Lanka </option>
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
                                 </select>
-                                <label>Select Your Country</label>
+                                <label id="updteCountryLable">Select Your Country</label>
                             </div>
 
 
                             <div class="input-field col s12">
                                 <textarea id="textarea" class="materialize-textarea" name="address"><%= request.getParameter("addres") %></textarea>
-                                <label for="address">Enter your address</label>
+                                <label id="updteAddressLable" for="address">Enter your address</label>
                             </div>
                             
 
@@ -133,7 +133,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     
-                                    <button type="submit" class="btn" style="width: 100%; vertical-align:-18px;width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>            
+                                    <button id="sumbitUBasics" type="submit" class="btn" style="width: 100%; vertical-align:-18px;width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>            
                                 </div>
 
                             </div>

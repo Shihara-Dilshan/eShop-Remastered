@@ -64,7 +64,7 @@
 
 
 
-        <form action="UpdateItem" method="post" enctype="multipart/form-data">  
+        <form name="UpdateItemForm" action="UpdateItem" method="post" enctype="multipart/form-data">  
             <div class="container" id="myForm" >
 
                 <div class="card-panel z-depth-3">
@@ -87,14 +87,14 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="name" type="text" class="validate" name="iname">
-                            <label for="name"><%=request.getParameter("name") %></label>
+                            <label id="updateItemNameLable" for="name"><%=request.getParameter("name") %></label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="names" type="text" name="iprice">
-                            <label for="iprice"><%=request.getParameter("price") %></label>
+                            <label id="updateItemPriceLable" for="iprice"><%=request.getParameter("price") %></label>
                         </div>
                     </div>
 
@@ -103,7 +103,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="textarea" class="materialize-textarea" name="itemDesc"></textarea>
-                            <label for="itemDesc"><%=request.getParameter("desc") %></label>
+                            <label id="updateItemDescLable" for="itemDesc"><%=request.getParameter("desc") %></label>
                         </div>
                     </div>
                     <!--div class="row">
@@ -115,7 +115,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <select style="font-size: 10px;" name="Icategory">
-                                <option value="" disabled selected>Choose Category</option>
+                                <option value="1" disabled selected>Choose Category</option>
                                 <%
                
                 
@@ -137,19 +137,19 @@
                                  }
                                 %>
                             </select>
-              
+                            <label  id="updateItemCatLable" for="itemDesc">Select Category</label>    
                         </div>
                     </div>       
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="names" type="text" name="qty">
-                            <label for="qty"><%=request.getParameter("qty") %> </label>
+                            <label id="updateItemQTYLable" for="qty"><%=request.getParameter("qty") %> </label>
                         </div>
                     </div>    
                     <br>
                     <div class="row">
                         <div class="input-feild col s12 ">  
-                            
+                            <label id="updateItemImageLable" for="Iimage">Select an image</label>
                             <input type="file" name="Iimage"  ><br><br>
                                 <label for="bimage">Current image name is <%=request.getParameter("image") %></label>
                                 <br><br>
@@ -164,7 +164,7 @@
 
                     <div class="row">
                         <div class="col s12">
-                            <input type="submit" value="Submit" class="btn" style="width:100%;">
+                            <input id="sumbitUpdateItem" type="submit" value="Submit" class="btn" style="width:100%;">
 
                         </div>
 
@@ -179,6 +179,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/removeVal.js"></script>
+    <script type="text/javascript" src="js/App.js"></script>
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();

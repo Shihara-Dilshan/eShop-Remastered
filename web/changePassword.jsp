@@ -71,7 +71,7 @@
   <%@ include file="includes/cart.jsp"  %>   
   
       
-  <form action="ChangeUserPassword" method="post">  
+  <form name="changePwdForm" action="ChangeUserPassword" method="post">  
       <div class="container" id="myForm">
       
           <div class="card-panel z-depth-3 grey lighten-5" style="border-style: solid; border-color: teal; border-radius: 5px;">
@@ -91,25 +91,25 @@
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" name="oldPword">
-          <label for="oldPword">Old Password</label>
+          <label id="oldPWDlabel" for="oldPword">Old Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="newPassword">
-          <label for="newPassword">New Password</label>
+          <label id="newPWDlabel" for="newPassword">New Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" class="validate" name="confirmPwd">
-          <label for="confirmPwd">Confirm New Password</label>
+          <label id="ConfirmPWDlabel" for="confirmPwd">Confirm New Password</label>
         </div>
       </div>
         <div class="row" id="oldN">
             <div class="input-field col s12">
 
-                <input type="text" value="<%= request.getParameter("email")%>" name="OldEmail">
+                <input  type="text" value="<%= request.getParameter("email")%>" name="OldEmail">
             </div>
         </div>
                     
@@ -123,7 +123,7 @@
       
       <div class="row">
         <div class="col s12">
-            <button type="submit" class="btn" style="width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>
+            <button id="changePWDFormSumbit" type="submit" class="btn" style="width:100%;">update <i class="material-icons" style="vertical-align: -4px;">update</i></button>
         
         </div>
       
