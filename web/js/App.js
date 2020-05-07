@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded' , function(){
    
     
     //cache the DOM
-    var cart = document.getElementById("cart");
-    var cartIcon = document.getElementById("cartIcon");
     var signUpForm = document.getElementById("submitForm");
     var signUpEmailLable = document.getElementById("emailLable");
     var signUppwdLabel = document.getElementById("passwordLable"); 
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded' , function(){
     var addressLabel = document.getElementById("addressLabel");
     var creditCardLabel = document.getElementById("creditCardLabel");
     var creditPinLabel = document.getElementById("creditPinLabel");
-    
     
     
     var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/  ;
@@ -172,15 +169,6 @@ document.addEventListener('DOMContentLoaded' , function(){
     });
     
    
-    
-    
-    //Show And Hide Cart
-    cartIcon.addEventListener("click", function () {
-        cart.classList.toggle("showCart");
-        cart.classList.toggle("hideCart");
-       
-    });
-    
     
     
 });
@@ -832,6 +820,22 @@ document.addEventListener('DOMContentLoaded' , function (){
         });
 
 });
+
+document.addEventListener('DOMContentLoaded' , function (){
+    
+    var cart = document.getElementById("cart");
+    var cartIcon = document.getElementById("cartIcon");
+    
+    //Show And Hide Cart
+    cartIcon.addEventListener("click", function () {
+        cart.classList.toggle("showCart");
+        cart.classList.toggle("hideCart");
+       
+    });
+    
+    
+});
+
 
 
 function myTrim(x) {
