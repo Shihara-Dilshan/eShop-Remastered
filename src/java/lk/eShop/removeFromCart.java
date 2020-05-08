@@ -38,23 +38,23 @@ public class removeFromCart extends HttpServlet {
             
             
             ArrayList<Item> RemoveArrayList = new ArrayList<Item>();
-            //aaarrayList.remove(this.RemoveIId);
+            
             
             if(request.getServletContext().getAttribute("cartItemList") != null){
             
                 RemoveArrayList = (ArrayList<Item>) request.getServletContext().getAttribute("cartItemList");
                 RemoveArrayList.remove(this.RemoveIId);
-                //request.getServletContext().setAttribute("cartItemList", RemoveArrayList);
+                
                 
             }else{
             
-                ///request.getServletContext().setAttribute("cartItemList", RemoveArrayList);
+                
                 
             }
           
             RequestDispatcher rd1 = getServletContext().getRequestDispatcher("/item.jsp?show="+request.getParameter("show")+"&result=delected");
             rd1.forward(request, response);
-            //response.sendRedirect("item.jsp?show=showAll&result=delected");
+            
             
        
  

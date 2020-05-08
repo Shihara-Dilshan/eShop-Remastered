@@ -15,7 +15,7 @@ public class ItemDaoImplement implements ItemDao {
     private final String sqlItemUpdate = "update item set name=? , descr=? , price=? , catName=? , qty=? , filename=?  where name=? ";
     private final String sqlCatDelete = "delete from category where Cname=?";
     private final String sqlItemDelete = "delete from item where name=?";
-    private final String sqlbuyItem = "update ItemCopy set cusid=? where itemId=? and cusid is null limit 1";
+    private final String sqlbuyItem = "update ItemCopy set cusid=? , PDate=CURRENT_TIMESTAMP where itemId=? and cusid is null limit 1";
     
     
     
@@ -301,6 +301,7 @@ public class ItemDaoImplement implements ItemDao {
            
             st.setString(1, String.valueOf(UserId));
             st.setString(2, String.valueOf(ItemId));
+            
            
             int i = st.executeUpdate();
             
