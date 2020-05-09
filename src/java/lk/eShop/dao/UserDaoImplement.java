@@ -13,7 +13,7 @@ public class UserDaoImplement implements UserDao{
     
     private final String sqlALogin = "select * from admin where name=? and password=?";
     private final String sqlULogin = "select * from user where name=? and password=?"; 
-    private final String sqlSignup = "insert into user( id,name,password,fname,lname,country,address,creditCard,cpin) values(4,?,?,?,?,?,?,?,?)";
+    private final String sqlSignup = "insert into user( id,name,password,fname,lname,country,address,creditCard,cpin) values(6,?,?,?,?,?,?,?,?)";
     private final String sqlUpdateUserbasics = "update user set name = ? , fname = ? , lname = ? , country = ? , address = ? where name = ?";
     private final String sqlUpdateCreditC = "update user set creditCard = ? , cpin = ? where name = ?";
     private final String sqlUpdateUPwd = "update user set password = ? where name = ? and password = ?";
@@ -24,47 +24,6 @@ public class UserDaoImplement implements UserDao{
         
         return false;
         
-    }
-    
-    @Override
-    public boolean loginCheck(){
-        
-        return false;
-        
-    }
-    
-    @Override
-    public boolean signUp(){
-        
-        return false;
-        
-    }
-    
-    @Override
-    public boolean updateUserProfile(){
-    
-        return false;
-    }
-    
-    @Override
-    public boolean updateUserBasics(){
-    
-        return false;
-    
-    }
-    
-    @Override
-    public boolean updateCreditCard(){
-    
-        return false;
-    
-    }
-    
-    @Override
-    public boolean changeUserPassword(){
-    
-        return false;
-    
     }
     
     
@@ -101,7 +60,7 @@ public class UserDaoImplement implements UserDao{
     
     
     //overloading the real loginCheck function
-    public boolean loginCheck(String name , String password) {
+    public boolean loginCheck(User loginUser) {
     
             
              
@@ -111,8 +70,8 @@ public class UserDaoImplement implements UserDao{
             DataSource loginChecksource = new DataSource();
             Connection con = loginChecksource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlULogin);
-            st.setString(1, name);
-            st.setString(2, password);
+            st.setString(1, loginUser.getEmail());
+            st.setString(2, loginUser.getPassword());
             ResultSet rs =st.executeQuery();
             
             if(rs.next()){
@@ -133,8 +92,8 @@ public class UserDaoImplement implements UserDao{
             return false;
     }
     
-    //overloading the real signUp function
-    public boolean signUp(String name, String password, String firstName, String lastName, String country, String address, String creditCard, String cpin) {
+    @Override
+    public boolean signUp(User newSignedUser) {
     
             
         
@@ -142,14 +101,14 @@ public class UserDaoImplement implements UserDao{
             DataSource signUpsource = new DataSource();
             Connection con = signUpsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlSignup);
-            st.setString(1, name);
-            st.setString(2, password);
-            st.setString(3, firstName);
-            st.setString(4, lastName);
-            st.setString(5, country);
-            st.setString(6, address);
-            st.setString(7, creditCard);
-            st.setString(8, cpin);
+            st.setString(1, newSignedUser.getEmail());
+            st.setString(2, newSignedUser.getPassword());
+            st.setString(3, newSignedUser.getFirstName());
+            st.setString(4, newSignedUser.getLastName());
+            st.setString(5, newSignedUser.getCountry());
+            st.setString(6, newSignedUser.getCountry());
+            st.setString(7, newSignedUser.getCreditCard());
+            st.setString(8, newSignedUser.getCpin());
             int i = st.executeUpdate();
             
             if(i!=0){
@@ -170,8 +129,8 @@ public class UserDaoImplement implements UserDao{
             return false;
     }
     
-    //overloading the real updateUserBasics function
-    public boolean updateUserBasics(String name, String firstName, String lastName, String country, String address , String oldEmail) {
+    @Override
+    public boolean updateUserBasics(User editBasics) {
     
             
         
@@ -179,12 +138,12 @@ public class UserDaoImplement implements UserDao{
             DataSource signUpsource = new DataSource();
             Connection con = signUpsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlUpdateUserbasics);
-            st.setString(1, name);
-            st.setString(2, firstName);
-            st.setString(3, lastName);
-            st.setString(4, country);
-            st.setString(5, address);
-            st.setString(6, oldEmail);
+            st.setString(1, editBasics.getEmail());
+            st.setString(2, editBasics.getFirstName());
+            st.setString(3, editBasics.getLastName());
+            st.setString(4, editBasics.getCountry());
+            st.setString(5, editBasics.getAddress());
+            st.setString(6, editBasics.getOldEmail());
             int i = st.executeUpdate();
             
             if(i!=0){
@@ -205,8 +164,8 @@ public class UserDaoImplement implements UserDao{
             return false;
     }
     
-    //overloading the real updateUserBasics function
-    public boolean updateCreditCard(String cardNo, String pin , String Email) {
+    @Override
+    public boolean updateCreditCard(User editCredit) {
     
             
         
@@ -214,9 +173,9 @@ public class UserDaoImplement implements UserDao{
             DataSource signUpsource = new DataSource();
             Connection con = signUpsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlUpdateCreditC);
-            st.setString(1, cardNo);
-            st.setString(2, pin);
-            st.setString(3, Email);
+            st.setString(1, editCredit.getCreditCard());
+            st.setString(2, editCredit.getCpin());
+            st.setString(3, editCredit.getEmail());
            
             int i = st.executeUpdate();
             
@@ -239,7 +198,7 @@ public class UserDaoImplement implements UserDao{
     }
     
     //overloading the real changeUserPassword function
-    public boolean changeUserPassword(String oldPassword, String newPassword , String Email) {
+    public boolean changeUserPassword(User updatePWD) {
     
             
         
@@ -247,9 +206,9 @@ public class UserDaoImplement implements UserDao{
             DataSource signUpsource = new DataSource();
             Connection con = signUpsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlUpdateUPwd);
-            st.setString(1, newPassword);
-            st.setString(2, Email);
-            st.setString(3, oldPassword);
+            st.setString(1, updatePWD.getPassword());
+            st.setString(2, updatePWD.getEmail());
+            st.setString(3, updatePWD.getOldPassword());
            
             int i = st.executeUpdate();
             

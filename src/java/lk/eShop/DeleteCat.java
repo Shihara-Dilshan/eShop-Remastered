@@ -8,30 +8,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import lk.eShop.dao.Category;
 import lk.eShop.dao.ItemDaoImplement;
 
 
 @WebServlet(name = "DeleteCat", urlPatterns = {"/DeleteCat"})
 public class DeleteCat extends HttpServlet {
 
-    private String Cname;
+    Category DeleteCategory = new Category();
     
-    public void setCname(String Cname) {
-        this.Cname = Cname;
-    }
+    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
          
         ItemDaoImplement sdaoDelete = new ItemDaoImplement();
          
+        DeleteCategory.setCategoryName(request.getParameter("catname"));
         
         
-        this.setCname(request.getParameter("catname"));
         
        
         
-        if(sdaoDelete.DeleteCategory(Cname)){
+        if(sdaoDelete.DeleteCategory(DeleteCategory)){
             
             response.sendRedirect("adminindex.jsp?result=CatDelected");
             

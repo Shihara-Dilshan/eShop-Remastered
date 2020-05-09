@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import lk.eShop.dao.Item;
 import lk.eShop.dao.ItemDaoImplement;
 
 
@@ -18,7 +19,8 @@ import lk.eShop.dao.ItemDaoImplement;
                  maxRequestSize = 1024 * 1024 * 50)
 public class addItem extends HttpServlet {
     
-    private String Iname;
+    Item newItem = new Item();
+    /*private String Iname;
     private String IPrice;
     private String IDesc;
     private String IcatName;
@@ -46,15 +48,22 @@ public class addItem extends HttpServlet {
         this.qty = qty;
     }
 
-    
+    */
    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
          
         ItemDaoImplement addItemdao = new ItemDaoImplement();
          
+        newItem.setItemName(request.getParameter("iname"));
+        newItem.setItemPrice(request.getParameter("iprice"));
+        newItem.setItemDesc(request.getParameter("itemDesc"));
+        newItem.setItemCatName(request.getParameter("Icategory"));
+        newItem.setItemQuantity(request.getParameter("qty"));
+        Part part = request.getPart("Iimage"); 
+        newItem.setFileName(getFileName(part));
         
-        
+        /*
         this.setIname(request.getParameter("iname"));
         this.setIPrice(request.getParameter("iprice"));
         this.setIDesc(request.getParameter("itemDesc"));
@@ -63,10 +72,10 @@ public class addItem extends HttpServlet {
         Part part = request.getPart("Iimage"); 
         
         fileName = getFileName(part);
-       
+        */
        
         
-        if(addItemdao.Additem(Iname, IPrice , IDesc ,IcatName , qty ,fileName )){
+        if(addItemdao.Additem(newItem)){
             
             
             response.sendRedirect("adminindex.jsp?result=addedItem");

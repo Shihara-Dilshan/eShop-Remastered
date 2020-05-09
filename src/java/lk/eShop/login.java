@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import lk.eShop.dao.User;
 import lk.eShop.dao.UserDaoImplement;
 
 
@@ -18,17 +19,7 @@ import lk.eShop.dao.UserDaoImplement;
 @WebServlet(name = "login", urlPatterns = {"/login"})
 public class login extends HttpServlet  {
 
-    private String name;
-    private String password;
-    
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    User loginUser = new User();
     
     
     @Override
@@ -36,12 +27,14 @@ public class login extends HttpServlet  {
         
         UserDaoImplement dao = new UserDaoImplement();
         
-        this.setName(request.getParameter("email"));
-        this.setPassword(request.getParameter("password"));
-        if((dao.loginCheck(name, password))){
+        loginUser.setEmail(request.getParameter("email"));
+        loginUser.setPassword(request.getParameter("password"));
+        
+        
+        if(dao.loginCheck(loginUser)){
             
             HttpSession session = request.getSession();
-            session.setAttribute("useremail", name);
+            session.setAttribute("useremail", loginUser.getEmail());
             response.sendRedirect("index.jsp");
             
         }else

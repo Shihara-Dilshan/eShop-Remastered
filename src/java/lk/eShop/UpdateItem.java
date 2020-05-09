@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import lk.eShop.dao.Item;
 import lk.eShop.dao.ItemDaoImplement;
 
 
@@ -18,59 +19,25 @@ import lk.eShop.dao.ItemDaoImplement;
                  maxRequestSize = 1024 * 1024 * 50)
 public class UpdateItem extends HttpServlet {
 
-    private String Iname;
-    private String IPrice;
-    private String IDesc;
-    private String IcatName;
-    private String qty;
-    private String fileName;
-    private String savePath;
-    private String Oldbname;
-
+    Item updateItem = new Item();
     
-    
-    public void setIname(String Iname) {
-        this.Iname = Iname;
-    }
-
-    public void setIPrice(String IPrice) {
-        this.IPrice = IPrice;
-    }
-
-    public void setIDesc(String IDesc) {
-        this.IDesc = IDesc;
-    }
-
-    public void setIcatName(String IcatName) {
-        this.IcatName = IcatName;
-    }
-
-    public void setQty(String qty) {
-        this.qty = qty;
-    }
-    
-    public void setOldbname(String Oldbname) {
-        this.Oldbname = Oldbname;
-    }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
       ItemDaoImplement sdaoIupdateI = new ItemDaoImplement();
          
-        
-        
-        this.setIname(request.getParameter("iname"));
-        this.setIPrice(request.getParameter("iprice"));
-        this.setIDesc(request.getParameter("itemDesc"));
-        this.setIcatName(request.getParameter("Icategory"));
-        this.setQty(request.getParameter("qty"));
-        this.setOldbname(request.getParameter("Oldbname"));
+        updateItem.setItemName(request.getParameter("iname"));
+        updateItem.setItemPrice(request.getParameter("iprice"));
+        updateItem.setItemDesc(request.getParameter("itemDesc"));
+        updateItem.setItemCatName(request.getParameter("Icategory"));
+        updateItem.setItemQuantity(request.getParameter("qty"));
+        updateItem.setOldItemName(request.getParameter("Oldbname"));
         Part part = request.getPart("Iimage"); 
-        
-        fileName = getFileName(part);
+        updateItem.setFileName(getFileName(part));
        
         
-        if(sdaoIupdateI.UpdateItem(Iname, IPrice , IDesc ,IcatName , qty ,fileName , Oldbname )){
+        
+        if(sdaoIupdateI.UpdateItem(updateItem)){
             
             
             response.sendRedirect("ManageItem.jsp?result=updated");

@@ -20,56 +20,14 @@ public class ItemDaoImplement implements ItemDao {
     
     
     @Override
-    public boolean AddCategory(){
-    
-        return false;
-    }
-    
-    @Override
-    public boolean Additem(){
-    
-        return false;
-        
-    }
-    
-    @Override
-    public boolean UpdateCategory(){
-    
-    
-         return false;
-    
-    }
-    
-    @Override
-    public boolean UpdateItem(){
-    
-        return false;
-    
-    }
-    
-    @Override
-    public boolean DeleteItem(){
-        
-        return false;
-        
-    }
-    
-    @Override
-    public boolean DeleteCategory(){
-        
-        return false;
-        
-    }
-    
-    @Override
     public boolean buyItem(){
     
         return false;
     
     }
     
-    //overloading the real AddCategory function
-    public boolean AddCategory(String Cname , String Cdesc , String fileName ){
+    @Override
+    public boolean AddCategory(Category newAddedCat){
     
         
         
@@ -78,9 +36,9 @@ public class ItemDaoImplement implements ItemDao {
             Connection con = AddCategorysource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlCatInsert);
            
-            st.setString(1, Cname);
-            st.setString(2, Cdesc);
-            st.setString(3, fileName);
+            st.setString(1, newAddedCat.getCategoryName());
+            st.setString(2, newAddedCat.getCategoryName());
+            st.setString(3, newAddedCat.getFileName());
             
             
             int i = st.executeUpdate();
@@ -105,22 +63,22 @@ public class ItemDaoImplement implements ItemDao {
         
     }
     
-    //overloading the real Additem function
-    public boolean Additem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName ){
+    @Override
+    public boolean Additem(Item newAddedItem){
     
         
-        
+          //String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName 
             try{
             DataSource Additemsource = new DataSource();
             Connection con = Additemsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlAddItem);
            
-            st.setString(1, Iname);
-            st.setString(2, IDesc);
-            st.setString(3, IPrice);
-            st.setString(4, IcatName);
-            st.setString(5, fileName);
-            st.setString(6, qty);
+            st.setString(1, newAddedItem.getItemName());
+            st.setString(2, newAddedItem.getItemDesc());
+            st.setString(3, newAddedItem.getItemPrice());
+            st.setString(4, newAddedItem.getItemCatName());
+            st.setString(5, newAddedItem.getFileName());
+            st.setString(6, newAddedItem.getItemQuantity());
             
             
             int i = st.executeUpdate();
@@ -146,8 +104,8 @@ public class ItemDaoImplement implements ItemDao {
     }
     
     
-    //overloading the real AddCategory function
-    public boolean UpdateCategory(String Cname , String Cdesc , String fileName , String Oldbname ){
+    @Override
+    public boolean UpdateCategory(Category UpdateCat){
     
         
             try{
@@ -155,10 +113,10 @@ public class ItemDaoImplement implements ItemDao {
             Connection con = UpdateCategorysource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlCatUpdate);
            
-            st.setString(1, Cname);
-            st.setString(2, Cdesc);
-            st.setString(3, fileName);
-            st.setString(4, Oldbname);
+            st.setString(1, UpdateCat.getCategoryName());
+            st.setString(2, UpdateCat.getCategoryDescription());
+            st.setString(3, UpdateCat.getFileName());
+            st.setString(4, UpdateCat.getOldCategoryName());
             
             int i = st.executeUpdate();
             
@@ -183,22 +141,22 @@ public class ItemDaoImplement implements ItemDao {
     }
     
      
-    //overloading the real UpdateItem function
-    public boolean UpdateItem(String Iname,String IPrice , String IDesc , String IcatName ,String qty , String fileName , String Oldbname){
+    @Override
+    public boolean UpdateItem(Item UpdateItem){
     
-        
+            
             try{
             DataSource UpdateItemSource = new DataSource();
             Connection con = UpdateItemSource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlItemUpdate);
            
-            st.setString(1, Iname);
-            st.setString(2, IDesc);
-            st.setString(3, IPrice);
-            st.setString(4, IcatName);
-            st.setString(5, qty);
-            st.setString(6, fileName);
-            st.setString(7, Oldbname);
+            st.setString(1, UpdateItem.getItemName());
+            st.setString(2, UpdateItem.getItemDesc());
+            st.setString(3, UpdateItem.getItemPrice());
+            st.setString(4, UpdateItem.getItemCatName());
+            st.setString(5, UpdateItem.getItemQuantity());
+            st.setString(6, UpdateItem.getFileName());
+            st.setString(7, UpdateItem.getOldItemName());
             
             int i = st.executeUpdate();
             
@@ -224,7 +182,7 @@ public class ItemDaoImplement implements ItemDao {
     
      
     //overloading the real AddCategory function
-    public boolean DeleteCategory(String Cname){
+    public boolean DeleteCategory(Category DeleteCat){
     
         
             try{
@@ -232,7 +190,7 @@ public class ItemDaoImplement implements ItemDao {
             Connection con = DeleteCategorysource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlCatDelete);
            
-            st.setString(1, Cname);
+            st.setString(1, DeleteCat.getCategoryName());
            
             int i = st.executeUpdate();
             
@@ -257,8 +215,8 @@ public class ItemDaoImplement implements ItemDao {
     }
     
     
-    //overloading the real AddCategory function
-    public boolean DeleteItem(String Cname){
+    @Override
+    public boolean DeleteItem(Item DeleteItem){
     
         
             try{
@@ -266,7 +224,7 @@ public class ItemDaoImplement implements ItemDao {
             Connection con = DeleteItemsource.createConnection();
             PreparedStatement st = con.prepareStatement(sqlItemDelete);
            
-            st.setString(1, Cname);
+            st.setString(1, DeleteItem.getItemName());
            
             int i = st.executeUpdate();
             

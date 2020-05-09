@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import lk.eShop.dao.Category;
 import lk.eShop.dao.ItemDaoImplement;
 
 
@@ -19,25 +20,7 @@ import lk.eShop.dao.ItemDaoImplement;
                  maxRequestSize = 1024 * 1024 * 50)
 public class UpdateCategory extends HttpServlet {
 
-    private String Cname;
-    private String CDescription;
-    private String fileName;
-    private String savePath;
-    private String Oldbname;
-
-
-    public void setCname(String Bname) {
-        this.Cname = Bname;
-    }
-
-    public void setCDescription(String BDescription) {
-        this.CDescription = BDescription;
-    }
-
-    
-    public void setOldbname(String Oldbname) {
-        this.Oldbname = Oldbname;
-    }
+    Category UpdateCategory = new Category();
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,17 +28,15 @@ public class UpdateCategory extends HttpServlet {
         
         ItemDaoImplement sdaoUpdateCat = new ItemDaoImplement();
          
-        
-        
-        this.setCname(request.getParameter("bname"));
-        this.setCDescription(request.getParameter("bmanufast"));
-        this.setOldbname(request.getParameter("Oldbname"));
+        UpdateCategory.setCategoryName(request.getParameter("bname"));
+        UpdateCategory.setCategoryDescription(request.getParameter("bmanufast"));
+        UpdateCategory.setOldCategoryName(request.getParameter("Oldbname"));
         Part part = request.getPart("bimage"); 
+        UpdateCategory.setFileName(getFileName(part));
         
-        fileName = getFileName(part);
+        
        
-       
-        if(sdaoUpdateCat.UpdateCategory(Cname, CDescription , fileName , Oldbname )){
+        if(sdaoUpdateCat.UpdateCategory(UpdateCategory)){
             
             
             response.sendRedirect("ManageCategory.jsp?result=updated");

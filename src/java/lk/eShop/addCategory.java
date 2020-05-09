@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import lk.eShop.dao.Category;
 import lk.eShop.dao.ItemDaoImplement;
 
 
@@ -22,21 +23,8 @@ import lk.eShop.dao.ItemDaoImplement;
                  maxRequestSize = 1024 * 1024 * 50)
 public class addCategory extends HttpServlet {
 
+    Category newCategory = new Category();
     
-    private String Cname;
-    private String CDescription;
-    private String fileName;
-    private String savePath;
-
-    public void setCname(String Bname) {
-        this.Cname = Bname;
-    }
-
-    public void setCDescription(String BDescription) {
-        this.CDescription = BDescription;
-    }
-
-   
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,17 +32,13 @@ public class addCategory extends HttpServlet {
         
         ItemDaoImplement addCat = new ItemDaoImplement();
          
-        
-        
-        this.setCname(request.getParameter("bname"));
-        this.setCDescription(request.getParameter("bmanufast"));
+        newCategory.setCategoryName(request.getParameter("bname"));
+        newCategory.setCategoryDescription(request.getParameter("bmanufast"));
         Part part = request.getPart("bimage"); 
+        newCategory.setFileName(getFileName(part));
         
-        fileName = getFileName(part);
-       
-       
         
-        if(addCat.AddCategory(Cname, CDescription , fileName )){
+        if(addCat.AddCategory(newCategory)){
             
            
             response.sendRedirect("adminindex.jsp?result=addedCat");
