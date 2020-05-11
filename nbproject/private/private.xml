@@ -3,31 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/editCreditCard.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDao.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/signup.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/addItem.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/Item.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDaoImplement.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/buy.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDao.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/js/App.js</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/removeFromCart.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/adminlogin.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/DeleteCat.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/editCreditCard.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/UpdateItem.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/cancelOrder.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/item.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/User.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/signup.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/userProfile.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/confirmOrder.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/ManageOrders.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/cancelledOrders.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/confirmAdminLogout.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/ManageItem.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/index.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/login.java</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/updateUserBasics.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDaoImplement.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/ChangeUserPassword.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/confirmLogout.jsp</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/restock.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/ItemDao.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/regUserslist.jsp</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/purchuseHistory.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/DataSource.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/js/App.js</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/addCategory.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/dao/UserDaoImplement.java</file>
             <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/purchusePage.jsp</file>
-            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/addItemToCart.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/src/java/lk/eShop/UpdateCategory.java</file>
+            <file>file:/home/noobmaster/NetBeansProjects/WebApplication3/web/adminindex.jsp</file>
         </group>
     </open-files>
 </project-private>

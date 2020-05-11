@@ -1,25 +1,22 @@
 <%-- 
-    Document   : purchuseHistory
-    Created on : May 8, 2020, 7:44:05 PM
+    Document   : ManageOrders
+    Created on : May 10, 2020, 8:42:38 AM
     Author     : noobmaster
 --%>
-
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="lk.eShop.dao.DataSource"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
-        if(session.getAttribute("useremail") == null){
-        
-        
-            response.sendRedirect("login.jsp");
-        
-        
-        
-        }
-            
-%>        
+    if (session.getAttribute("adminemail") == null) {
+
+        response.sendRedirect("adminlogin.jsp");
+
+    }
+
+%>       
 
 
   <!DOCTYPE html>
@@ -35,7 +32,28 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
+      <script>
+            
+            var resulItem = "delivered";
+            var failed= "failed";
+            
+            document.addEventListener("DOMContentLoaded" , function(){
+                
+                if(resulItem === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Order Confirmed" });
+          
+                }else if(failed === '<%= request.getParameter("result")%>' ){
+          
+                        M.toast({ html: "Something went wrong!" });
+          
+                }
+   
+                
+            });
+             
+           
+        </script>
       <style>
     
         body {
@@ -49,16 +67,16 @@
     
 
     <body id="Home" class="scrollspy test" background="image/woman-draw-a-light-bulb-in-white-board-37581051.jpg">
-  <%@ include file="includes/Navbar.jsp"  %>  
+    <%@ include file="includes\adminheaderNormal.jsp"  %>  
       
 
      <section id="cartSection">
-         <form action="cancelOrder" method="get" class="container white aCont" style="margin-top: 2%;">
+         <form action="confirmOrder" method="get" class="container white aCont" style="margin-top: 2%;">
              <table class="striped highlight centered" style="height: 100%;">
                  <thead>
                  <div class="col s12 center-align" style="padding-top: 2%;">
 
-                     <h5><i class="material-icons teal-text">airport_shuttle</i>My<span class="teal-text">Purchases</span>
+                     <h5><i class="material-icons teal-text">textsms</i>Total<span class="teal-text">Orders</span>
                      <button class="btn red right disabled" id="TotlPrice"> </button>
                      </h5>
                  </div>
@@ -67,8 +85,10 @@
                          <th>Price</th>
 
                          <th>Order Date</th>
+                         <th>Customer</th>
+                         <th>Delivery Location</th>
                          <th>Delivery Status</th>
-                         <th>Cancel Order</th>
+                         <th>Edit</th>
                      </tr>
                  </thead>
 
@@ -76,10 +96,9 @@
                      <%
                          DataSource source = new DataSource();
                          Connection con = source.createConnection();
-                         PreparedStatement st = con.prepareStatement("select IC.Cid,I.name , I.price , IC.PDate , IC.status from ItemCopy AS IC inner join item AS I ON I.id = IC.itemId where IC.cusid = ? order by IC.PDate");
+                         PreparedStatement st = con.prepareStatement("select  IC.Cid , U.fname , U.address , I.name , I.price , IC.PDate , IC.status from ItemCopy AS IC inner join item AS I ON I.id = IC.itemId inner join user U ON U.id = IC.cusid  where IC.cusid is not null");
 
-                         int UserID = (int)session.getAttribute("userID");
-                         st.setInt(1, UserID);
+                         
                          
                          ResultSet rs = st.executeQuery();
                          int x = 1;
@@ -92,8 +111,10 @@
                          <td class="left" style="padding-left: 20px;"><%=rs.getString("I.name")%></td>
                          <td class="price"><%=rs.getString("I.price")%></td>
                          <td class="price"><%=rs.getString("IC.PDate")%></td>
+                         <td class="price"><%=rs.getString("U.fname")%></td>
+                         <td class="price"><%=rs.getString("U.address")%></td>
                          <td class="status"><%=rs.getString("IC.status")%></td>
-                         <td class="price"><button value="<%=rs.getString("IC.Cid")%>" name="id" class="btn">cancel</button></td>
+                         <td class="price"><button value="<%=rs.getString("IC.Cid")%>" name="id" class="btn">confirm</button></td>
                          
                      </tr>    
 

@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +14,11 @@ import lk.eShop.dao.UserDaoImplement;
 public class ChangeUserPassword extends HttpServlet {
 
     User chnagePWD = new User();
+    UserDaoImplement updatePWDdao = new UserDaoImplement();
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        UserDaoImplement updatePWDdao = new UserDaoImplement();
         
         chnagePWD.setOldPassword(request.getParameter("oldPword"));
         chnagePWD.setPassword(request.getParameter("newPassword"));
@@ -32,7 +32,9 @@ public class ChangeUserPassword extends HttpServlet {
             
         }
         else{
+            
              response.sendRedirect("userProfile.jsp?result=pasfailed");
+             
         }
         
         

@@ -1,10 +1,8 @@
 package lk.eShop.dao;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import javax.servlet.http.Part;
 
 
 public class ItemDaoImplement implements ItemDao {
@@ -15,7 +13,10 @@ public class ItemDaoImplement implements ItemDao {
     private final String sqlItemUpdate = "update item set name=? , descr=? , price=? , catName=? , qty=? , filename=?  where name=? ";
     private final String sqlCatDelete = "delete from category where Cname=?";
     private final String sqlItemDelete = "delete from item where name=?";
-    private final String sqlbuyItem = "update ItemCopy set cusid=? , PDate=CURRENT_TIMESTAMP where itemId=? and cusid is null limit 1";
+    private final String sqlbuyItem = "update ItemCopy set cusid=? , PDate=CURRENT_TIMESTAMP , status = 'pending' where itemId=? and cusid is null limit 1";
+    private final String sqlConfirmOrder = "update ItemCopy set status = 'delivered' where Cid=?";
+    private final String sqlCancelOrder = "update ItemCopy set status = 'Cancelled'  where Cid=?";
+    private final String sqlrestockOrder = "update ItemCopy set cusid = NULL , status = NULL  where Cid=?";
     
     
     
@@ -37,7 +38,7 @@ public class ItemDaoImplement implements ItemDao {
             PreparedStatement st = con.prepareStatement(sqlCatInsert);
            
             st.setString(1, newAddedCat.getCategoryName());
-            st.setString(2, newAddedCat.getCategoryName());
+            st.setString(2, newAddedCat.getCategoryDescription());
             st.setString(3, newAddedCat.getFileName());
             
             
@@ -281,6 +282,111 @@ public class ItemDaoImplement implements ItemDao {
             return false;        
     
         
+    }
+    
+    @Override
+    public boolean ConfirmOrder(String itemId){
+    
+        try{
+            DataSource confirmOrdersource = new DataSource();
+            Connection con = confirmOrdersource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlConfirmOrder);
+           
+            st.setString(1, itemId);
+            
+            
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    
+    }
+    
+    @Override
+    public boolean CancelOrder(String CancelItemId){
+    
+        try{
+            DataSource CancelOrdersource = new DataSource();
+            Connection con = CancelOrdersource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlCancelOrder);
+           
+            st.setString(1, CancelItemId);
+            
+            
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    
+    }
+    
+    @Override
+    public boolean restockItem(String restockItemId){
+    
+        try{
+            DataSource restockItemsource = new DataSource();
+            Connection con = restockItemsource.createConnection();
+            PreparedStatement st = con.prepareStatement(sqlrestockOrder);
+           
+            st.setString(1, restockItemId);
+            
+            
+           
+            int i = st.executeUpdate();
+            
+            if(i!=0){
+            
+                return true;
+            
+            }
+            }catch(ClassNotFoundException | SQLException e){
+            
+                e.printStackTrace();
+            
+            }catch(Exception e){
+            
+                e.printStackTrace();
+            
+            }
+            
+            return false;        
+    
+        
+    
     }
     
     

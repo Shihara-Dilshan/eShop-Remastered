@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +21,7 @@ public class UpdateItem extends HttpServlet {
     Item updateItem = new Item();
     
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
       ItemDaoImplement sdaoIupdateI = new ItemDaoImplement();
@@ -45,7 +45,9 @@ public class UpdateItem extends HttpServlet {
             
         }
         else{
+            
             response.sendRedirect("errorPage.jsp");
+            
         }
          
         

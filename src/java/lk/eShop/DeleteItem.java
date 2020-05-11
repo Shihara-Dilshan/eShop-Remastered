@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +14,13 @@ import lk.eShop.dao.ItemDaoImplement;
 public class DeleteItem extends HttpServlet {
 
     Item editItem = new Item();
+    ItemDaoImplement sdaoDeleteItem = new ItemDaoImplement();
     
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        ItemDaoImplement sdaoDeleteItem = new ItemDaoImplement();
-         
+        
         editItem.setItemName(request.getParameter("itemname"));
         
         
@@ -31,7 +31,9 @@ public class DeleteItem extends HttpServlet {
             
         }
         else{
+            
             response.sendRedirect("errorPage.jsp");
+            
         }
          
         

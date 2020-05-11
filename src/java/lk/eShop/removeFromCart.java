@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,6 +20,7 @@ public class removeFromCart extends HttpServlet {
         this.RemoveItem = RemoveItem;
     }
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException , IndexOutOfBoundsException {
         
             

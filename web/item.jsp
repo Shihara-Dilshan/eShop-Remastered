@@ -115,7 +115,7 @@
                 
                 DataSource source = new DataSource();
                 Connection con = source.createConnection();
-                PreparedStatement st = con.prepareStatement("select * from item");
+                PreparedStatement st = con.prepareStatement("select * from item order by rand()");
     
                 ResultSet rs =st.executeQuery();
                 int x = 1;

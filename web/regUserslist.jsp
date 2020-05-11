@@ -1,6 +1,6 @@
 <%-- 
-    Document   : purchuseHistory
-    Created on : May 8, 2020, 7:44:05 PM
+    Document   : regUserslist
+    Created on : May 10, 2020, 1:24:20 PM
     Author     : noobmaster
 --%>
 
@@ -9,17 +9,15 @@
 <%@page import="lk.eShop.dao.DataSource"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
-        if(session.getAttribute("useremail") == null){
-        
-        
-            response.sendRedirect("login.jsp");
-        
-        
-        
-        }
-            
-%>        
+    if (session.getAttribute("adminemail") == null) {
+
+        response.sendRedirect("adminlogin.jsp");
+
+    }
+
+%>       
 
 
   <!DOCTYPE html>
@@ -49,26 +47,28 @@
     
 
     <body id="Home" class="scrollspy test" background="image/woman-draw-a-light-bulb-in-white-board-37581051.jpg">
-  <%@ include file="includes/Navbar.jsp"  %>  
+    <%@ include file="includes\adminheaderNormal.jsp"  %>  
       
 
      <section id="cartSection">
-         <form action="cancelOrder" method="get" class="container white aCont" style="margin-top: 2%;">
+         <form action="#" method="get" class="container white aCont" style="margin-top: 2%;">
              <table class="striped highlight centered" style="height: 100%;">
                  <thead>
                  <div class="col s12 center-align" style="padding-top: 2%;">
 
-                     <h5><i class="material-icons teal-text">airport_shuttle</i>My<span class="teal-text">Purchases</span>
+                     <h5><i class="material-icons teal-text">assignment_ind</i>Registered<span class="teal-text">Users</span>
                      <button class="btn red right disabled" id="TotlPrice"> </button>
                      </h5>
                  </div>
                      <tr>
-                         <th class="left" style="padding-left: 20px;">Item</th>
-                         <th>Price</th>
+                         <th class="left" style="padding-left: 20px;">Email</th>
+                         <th>Fist Name</th>
 
-                         <th>Order Date</th>
-                         <th>Delivery Status</th>
-                         <th>Cancel Order</th>
+                         <th>Last Name</th>
+                        
+                         <th>Country</th>
+                         <th>Address</th>
+                         
                      </tr>
                  </thead>
 
@@ -76,10 +76,9 @@
                      <%
                          DataSource source = new DataSource();
                          Connection con = source.createConnection();
-                         PreparedStatement st = con.prepareStatement("select IC.Cid,I.name , I.price , IC.PDate , IC.status from ItemCopy AS IC inner join item AS I ON I.id = IC.itemId where IC.cusid = ? order by IC.PDate");
+                         PreparedStatement st = con.prepareStatement("select name, fname, lname, country, address from user");
 
-                         int UserID = (int)session.getAttribute("userID");
-                         st.setInt(1, UserID);
+                         
                          
                          ResultSet rs = st.executeQuery();
                          int x = 1;
@@ -89,11 +88,11 @@
 
                      %>
                      <tr>
-                         <td class="left" style="padding-left: 20px;"><%=rs.getString("I.name")%></td>
-                         <td class="price"><%=rs.getString("I.price")%></td>
-                         <td class="price"><%=rs.getString("IC.PDate")%></td>
-                         <td class="status"><%=rs.getString("IC.status")%></td>
-                         <td class="price"><button value="<%=rs.getString("IC.Cid")%>" name="id" class="btn">cancel</button></td>
+                         <td class="left" style="padding-left: 20px;"><%=rs.getString("name")%></td>
+                         <td class="price"><%=rs.getString("fname")%></td>
+                         <td class="price"><%=rs.getString("lname")%></td>
+                         <td class="price"><%=rs.getString("country")%></td>
+                         <td class="price"><%=rs.getString("address")%></td>
                          
                      </tr>    
 

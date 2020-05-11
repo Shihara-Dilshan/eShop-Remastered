@@ -2,15 +2,11 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import lk.eShop.dao.User;
 import lk.eShop.dao.UserDaoImplement;
 
@@ -21,14 +17,14 @@ import lk.eShop.dao.UserDaoImplement;
 public class signup extends HttpServlet {
 
     User newUser = new User();
+    UserDaoImplement sdaoSignUp = new UserDaoImplement();
     
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
         
-        UserDaoImplement sdaoSignUp = new UserDaoImplement();
-         
+        
         newUser.setEmail(request.getParameter("email"));
         newUser.setPassword(request.getParameter("password"));
         newUser.setFirstName(request.getParameter("first_name"));

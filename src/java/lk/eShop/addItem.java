@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -20,40 +19,11 @@ import lk.eShop.dao.ItemDaoImplement;
 public class addItem extends HttpServlet {
     
     Item newItem = new Item();
-    /*private String Iname;
-    private String IPrice;
-    private String IDesc;
-    private String IcatName;
-    private String qty;
-    private String fileName;
-    
-
-    public void setIname(String Iname) {
-        this.Iname = Iname;
-    }
-
-    public void setIPrice(String IPrice) {
-        this.IPrice = IPrice;
-    }
-
-    public void setIDesc(String IDesc) {
-        this.IDesc = IDesc;
-    }
-
-    public void setIcatName(String IcatName) {
-        this.IcatName = IcatName;
-    }
-
-    public void setQty(String qty) {
-        this.qty = qty;
-    }
-
-    */
+    ItemDaoImplement addItemdao = new ItemDaoImplement();
    
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-         
-        ItemDaoImplement addItemdao = new ItemDaoImplement();
          
         newItem.setItemName(request.getParameter("iname"));
         newItem.setItemPrice(request.getParameter("iprice"));
@@ -63,17 +33,7 @@ public class addItem extends HttpServlet {
         Part part = request.getPart("Iimage"); 
         newItem.setFileName(getFileName(part));
         
-        /*
-        this.setIname(request.getParameter("iname"));
-        this.setIPrice(request.getParameter("iprice"));
-        this.setIDesc(request.getParameter("itemDesc"));
-        this.setIcatName(request.getParameter("Icategory"));
-        this.setQty(request.getParameter("qty"));
-        Part part = request.getPart("Iimage"); 
         
-        fileName = getFileName(part);
-        */
-       
         
         if(addItemdao.Additem(newItem)){
             

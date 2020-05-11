@@ -130,7 +130,7 @@
             <%
                 DataSource source = new DataSource();
                 Connection con = source.createConnection();
-                PreparedStatement st = con.prepareStatement("select * from category");
+                PreparedStatement st = con.prepareStatement("select * from category order by rand()");
     
                 ResultSet rs =st.executeQuery();
                 int x = 1;

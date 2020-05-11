@@ -1,7 +1,6 @@
 package lk.eShop;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +14,12 @@ import lk.eShop.dao.UserDaoImplement;
 public class editCreditCard extends HttpServlet {
 
     User editUserCredit = new User();
+    UserDaoImplement sdaoEditCcard = new UserDaoImplement();
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        UserDaoImplement sdaoEditCcard = new UserDaoImplement();
+        
         
         editUserCredit.setCreditCard(request.getParameter("creditCard"));
         editUserCredit.setCpin(request.getParameter("pin"));

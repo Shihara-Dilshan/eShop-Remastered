@@ -83,12 +83,21 @@
                 Connection con = source.createConnection();
                 PreparedStatement cateountSt = con.prepareStatement("select * from category");
                 PreparedStatement ItemCountSt = con.prepareStatement("select * from item");
+                PreparedStatement OrderCountSt = con.prepareStatement("select * from ItemCopy where cusid is not null");
+                PreparedStatement CancelOrderCountSt = con.prepareStatement("select * from ItemCopy where cusid is not null AND status = 'Cancelled'");
+                PreparedStatement UserCountSt = con.prepareStatement("select * from user");
                 
                 ResultSet rs =cateountSt.executeQuery();
                 ResultSet rs2 =ItemCountSt.executeQuery();
+                ResultSet rs3 =OrderCountSt.executeQuery();
+                ResultSet rs4 =UserCountSt.executeQuery();
+                ResultSet rs5 =CancelOrderCountSt.executeQuery();
                 
                 int CatCount = 0;
                 int ItemCount = 0;
+                int orderCount = 0;
+                int userCount = 0;
+                int cancelOrdercount = 0;
                 
                 while(rs.next()){
                 
@@ -98,7 +107,18 @@
                 
                     ItemCount++;
                 }
-                  
+                while(rs3.next()){
+                
+                    orderCount++;
+                }
+                while(rs4.next()){
+                
+                    userCount++;
+                } 
+                while(rs5.next()){
+                
+                    cancelOrdercount++;
+                } 
 
         %>
 
@@ -153,8 +173,8 @@
                             <p>We deliver some countries. </p>
                             <div class="card-content teal-text"> 
 
-                                <h4>25</h4>
-                                <a href="ManageItem.jsp"><button class="btn"> View   </button></a>
+                                <h4><%= userCount %></h4>
+                                <a href="regUserslist.jsp"><button class="btn"> View   </button></a>
                             </div>
                         </div>
 
@@ -179,7 +199,8 @@
                             <p> Your item will be delivered within 5 </p>
                             <div class="card-content teal-text"> 
 
-                                <h4>25</h4>
+                                <h4><%= orderCount %></h4>
+                                <a href="ManageOrders.jsp"><button class="btn"> View / Manage  </button></a>
                             </div>
 
                         </div>
@@ -192,7 +213,8 @@
                             <p> We delivery to your door step </p>
                             <div class="card-content teal-text" > 
 
-                                <h4 >25</h4>
+                                <h4 ><%= cancelOrdercount %></h4>
+                                <a href="cancelledOrders.jsp"><button class="btn"> View / Manage  </button></a>
                             </div>
                         </div>
 
@@ -204,7 +226,8 @@
                             <p>We deliver some countries.</p>
                             <div class="card-content teal-text"> 
 
-                                <h4>25</h4>
+                                <h4>0</h4>
+                                <a href="#"><button class="btn"> View   </button></a>
                             </div>
                         </div>
 

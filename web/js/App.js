@@ -836,10 +836,30 @@ document.addEventListener('DOMContentLoaded' , function (){
     
 });
 
+//change cancel state in UI
+document.addEventListener('DOMContentLoaded' , function (){
+    
+    var cancelBTN = document.querySelectorAll(".status");
+    
+    for(var i=0; i<= cancelBTN.length-1; i++){
+        
+        if(cancelBTN[i].textContent == "Cancelled" || cancelBTN[i].textContent == "delivered" ){
+            
+            cancelBTN[i].nextElementSibling.innerHTML = "<button class='btn' disabled> cancel </button>";
+            
+        }
+        
+        
+        
+    }
+    
+});
 
 
 function myTrim(x) {
+    
   return x.replace(/\s/g, "");
+  
 }
 
  

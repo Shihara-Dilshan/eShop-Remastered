@@ -1,9 +1,6 @@
 package lk.eShop.dao;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +10,7 @@ public class UserDaoImplement implements UserDao{
     
     private final String sqlALogin = "select * from admin where name=? and password=?";
     private final String sqlULogin = "select * from user where name=? and password=?"; 
-    private final String sqlSignup = "insert into user( id,name,password,fname,lname,country,address,creditCard,cpin) values(6,?,?,?,?,?,?,?,?)";
+    private final String sqlSignup = "insert into user( name,password,fname,lname,country,address,creditCard,cpin) values(?,?,?,?,?,?,?,?)";
     private final String sqlUpdateUserbasics = "update user set name = ? , fname = ? , lname = ? , country = ? , address = ? where name = ?";
     private final String sqlUpdateCreditC = "update user set creditCard = ? , cpin = ? where name = ?";
     private final String sqlUpdateUPwd = "update user set password = ? where name = ? and password = ?";

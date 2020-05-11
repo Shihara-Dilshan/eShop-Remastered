@@ -17,6 +17,7 @@ import lk.eShop.dao.ItemDaoImplement;
 @WebServlet(name = "buy", urlPatterns = {"/buy"})
 public class buy extends HttpServlet {
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         ItemDaoImplement sdaoBuy = new ItemDaoImplement();

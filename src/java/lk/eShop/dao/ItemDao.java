@@ -10,5 +10,8 @@ public interface ItemDao {
     public boolean DeleteItem(Item DeleteItem);
     public boolean DeleteCategory(Category DeleteCat);
     public boolean buyItem();
+    public boolean ConfirmOrder(String itemId);
+    public boolean CancelOrder(String CancelItemId);
+    public boolean restockItem(String restockItemId);
     
 }

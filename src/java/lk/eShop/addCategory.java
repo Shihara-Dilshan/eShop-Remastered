@@ -1,11 +1,6 @@
 package lk.eShop;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -24,13 +19,13 @@ import lk.eShop.dao.ItemDaoImplement;
 public class addCategory extends HttpServlet {
 
     Category newCategory = new Category();
-    
+    ItemDaoImplement addCat = new ItemDaoImplement();
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         
-        ItemDaoImplement addCat = new ItemDaoImplement();
+        
          
         newCategory.setCategoryName(request.getParameter("bname"));
         newCategory.setCategoryDescription(request.getParameter("bmanufast"));
